@@ -1,0 +1,16 @@
+name: Wizard
+type: profile
+description: 'Form wizard install profile.'
+version: VERSION
+core: 8.x
+install:
+  - node
+  - block
+  - dblog
+  - inline_entity_form
+  - page_cache
+  - config_ignore
+  - config_split
+  - admin_toolbar
+themes:
+  - stark
