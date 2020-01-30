@@ -13,4 +13,3 @@ install:
   - config_split
 themes:
   - stark
-  - seven
