@@ -9,8 +9,16 @@ install:
   - dblog
   - inline_entity_form
   - page_cache
+  - config_filter
   - config_ignore
   - config_split
+
+# Required modules
+dependencies:
+  - node
+  - block
+
+# List any themes that should be installed as part of the profile installation.
 themes:
-  - stark
+  - bartik
   - seven
