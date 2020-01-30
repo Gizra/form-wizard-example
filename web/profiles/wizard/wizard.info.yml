@@ -11,6 +11,6 @@ install:
   - page_cache
   - config_ignore
   - config_split
-  - admin_toolbar
 themes:
   - stark
+  - seven

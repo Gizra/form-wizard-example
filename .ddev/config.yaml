@@ -13,6 +13,16 @@ nfs_mount_enabled: false
 provider: default
 use_dns_when_possible: true
 timezone: ""
+hooks:
+  post-import-db:
+    - exec: drush sqlq "UPDATE users SET mail = concat(mail, '.test') WHERE uid > 0
+        AND mail NOT LIKE '%~%'"
+    - exec: drush sqlq "UPDATE users SET mail = replace(mail, '~', '.test~') WHERE uid
+        > 0 AND mail LIKE '%~%'"
+    - exec: drush uli
+  post-start:
+    - exec: drush site-install wizard -y --db-url=mysql://db:db@db/db --account-pass=admin --existing-config
+    - exec: drush uli
 
 
 # This config.yaml was created with ddev version v1.12.1
