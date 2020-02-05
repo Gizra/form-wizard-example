@@ -1,0 +1,22 @@
+uuid: 13ece127-01d6-4a86-b502-3a663d086c98
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.visa_application
+  module:
+    - text
+id: node.visa_application.body
+field_name: body
+entity_type: node
+bundle: visa_application
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

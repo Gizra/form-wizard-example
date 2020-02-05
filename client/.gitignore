@@ -1,0 +1,11 @@
+elm-stuff
+node_modules
+serve
+dist
+bower_components
+
+# For local tests
+libsysconfcpus
+
+# Ignore the local config file.
+LocalConfig.elm

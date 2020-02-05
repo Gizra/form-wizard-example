@@ -1,0 +1,37 @@
+uuid: 00e28d7c-4bb1-4cd0-9eb0-d28661d64cc8
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - server_migrate
+_core:
+  default_config_hash: dvRMm1z1NV7SzYbcSlqDGC5JQzYAUfbig8I6jzL_tUg
+id: server_migrate_user
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - users
+migration_group: server
+label: User
+source:
+  plugin: csv
+  path: modules/custom/server_migrate/csv_files/users.csv
+  header_row_count: 1
+  keys:
+    - _id
+process:
+  name: _email
+  mail: _email
+  pass:
+    plugin: callback
+    callable: md5
+    source: _pw
+  status:
+    plugin: default_value
+    default_value: 1
+destination:
+  plugin: 'entity:user'
+  md5_passwords: true
+migration_dependencies: null

@@ -1,0 +1,30 @@
+uuid: 404d7c91-1913-48ef-841b-3ba764d3c0f9
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.visa_application.body
+    - node.type.visa_application
+  module:
+    - text
+    - user
+id: node.visa_application.teaser
+targetEntityType: node
+bundle: visa_application
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

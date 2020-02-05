@@ -1,0 +1,28 @@
+uuid: e01d98fa-0d28-43f1-9d72-b523ea35b1e6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.visa_application.body
+    - node.type.visa_application
+  module:
+    - text
+    - user
+id: node.visa_application.default
+targetEntityType: node
+bundle: visa_application
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

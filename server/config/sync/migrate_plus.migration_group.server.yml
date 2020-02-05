@@ -1,0 +1,10 @@
+uuid: 3ceae852-dd52-4ad2-8888-d169ab7021db
+langcode: en
+status: true
+dependencies: {  }
+id: server
+label: server
+description: ''
+source_type: null
+module: null
+shared_configuration: null

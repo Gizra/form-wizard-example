@@ -1,0 +1,18 @@
+uuid: e2db1c08-1937-4b27-b9e6-fb2c353188ea
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Visa Application'
+type: visa_application
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true
