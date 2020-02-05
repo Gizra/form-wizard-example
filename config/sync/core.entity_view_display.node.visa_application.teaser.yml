@@ -1,0 +1,28 @@
+uuid: b62944ee-b85b-4677-b5fe-bd16b18b0699
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.visa_application.field_application_status
+    - field.field.node.visa_application.field_birthdate
+    - field.field.node.visa_application.field_first_name
+    - field.field.node.visa_application.field_last_name
+    - node.type.visa_application
+  module:
+    - user
+id: node.visa_application.teaser
+targetEntityType: node
+bundle: visa_application
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_application_status: true
+  field_birthdate: true
+  field_first_name: true
+  field_last_name: true

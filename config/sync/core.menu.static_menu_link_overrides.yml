@@ -1,0 +1,9 @@
+definitions:
+  contact__site_page:
+    enabled: true
+    menu_name: footer
+    parent: ''
+    weight: 0
+    expanded: false
+_core:
+  default_config_hash: pvhQ1P16oZ75v_ttIiQNzMqbsrz8gq1g-kKD6P2XQv8

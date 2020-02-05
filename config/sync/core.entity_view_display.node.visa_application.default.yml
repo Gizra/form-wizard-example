@@ -1,0 +1,57 @@
+uuid: 4883964e-5162-4781-bc87-5c6215a14c3b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.visa_application.field_application_status
+    - field.field.node.visa_application.field_birthdate
+    - field.field.node.visa_application.field_first_name
+    - field.field.node.visa_application.field_last_name
+    - node.type.visa_application
+  module:
+    - datetime
+    - options
+    - user
+id: node.visa_application.default
+targetEntityType: node
+bundle: visa_application
+mode: default
+content:
+  field_application_status:
+    weight: 101
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_birthdate:
+    weight: 104
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_first_name:
+    weight: 102
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_last_name:
+    weight: 103
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

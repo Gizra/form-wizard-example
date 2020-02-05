@@ -1,0 +1,24 @@
+uuid: b4abd645-7ca5-4d8b-afa7-5ed56ccfae32
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_last_name
+    - node.type.visa_application
+  module:
+    - visa_application
+third_party_settings:
+  visa_application:
+    faux_required: 1
+id: node.visa_application.field_last_name
+field_name: field_last_name
+entity_type: node
+bundle: visa_application
+label: 'Last name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,24 @@
+uuid: 23151e0e-f09f-47f9-9e76-b2adeeb72b54
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_first_name
+    - node.type.visa_application
+  module:
+    - visa_application
+third_party_settings:
+  visa_application:
+    faux_required: 1
+id: node.visa_application.field_first_name
+field_name: field_first_name
+entity_type: node
+bundle: visa_application
+label: 'First name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

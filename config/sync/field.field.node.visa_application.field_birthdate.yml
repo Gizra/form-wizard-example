@@ -1,0 +1,25 @@
+uuid: 5c0f0073-879e-4738-bf26-0d8ef355cd78
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_birthdate
+    - node.type.visa_application
+  module:
+    - datetime
+    - visa_application
+third_party_settings:
+  visa_application:
+    faux_required: 1
+id: node.visa_application.field_birthdate
+field_name: field_birthdate
+entity_type: node
+bundle: visa_application
+label: Birthdate
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime
