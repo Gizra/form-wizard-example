@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains visa_application.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function visa_application_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the visa_application module.
+    case 'help.page.visa_application':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Visa application example.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function visa_application_theme() {
+  return [
+    'visa_application' => [
+      'render element' => 'children',
+    ],
+  ];
+}

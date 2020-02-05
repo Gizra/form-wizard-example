@@ -1,0 +1,5 @@
+name: 'Visa application'
+type: module
+description: 'Visa application example.'
+core: 8.x
+package: 'Custom'
