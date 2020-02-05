@@ -46,6 +46,9 @@ dependencies:
   - menu_link_content
   - views
 
+  # Custom
+  - visa_application
+
 themes:
   - stable
   - classy

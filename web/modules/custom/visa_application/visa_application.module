@@ -5,23 +5,8 @@
  * Contains visa_application.module.
  */
 
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
-
-/**
- * Implements hook_help().
- */
-function visa_application_help($route_name, RouteMatchInterface $route_match) {
-  switch ($route_name) {
-    // Main module help for the visa_application module.
-    case 'help.page.visa_application':
-      $output = '';
-      $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('Visa application example.') . '</p>';
-      return $output;
-
-    default:
-  }
-}
 
 /**
  * Implements hook_theme().
@@ -31,5 +16,32 @@ function visa_application_theme() {
     'visa_application' => [
       'render element' => 'children',
     ],
+  ];
+}
+
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function visa_application_form_field_config_edit_form_alter(&$form, FormStateInterface $form_state) {
+  /** @var \Drupal\field\FieldConfigInterface $field_config */
+  $field_config = $form_state->getFormObject()->getEntity();
+
+  $application_content_types = [
+    'visa_application',
+  ];
+
+  // The structure of the ID: entity_type.bundle.field_name .
+  $field_type = explode('.', $field_config->id())[1];
+  if (!in_array($field_type, $application_content_types)) {
+    // Not involving in the application process.
+    return;
+  }
+
+  $form['third_party_settings']['visa_application']['faux_required'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Faux required'),
+    '#description' => t('Mark as required for the Visa application wizard, so we know if a section is partially filled, or completed.'),
+    '#default_value' => $field_config->getThirdPartySetting('visa_application', 'faux_required'),
   ];
 }
