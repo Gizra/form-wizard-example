@@ -1,4 +1,3 @@
-uuid: 135a30d7-e79d-476f-acfc-6f95edf9fb45
 langcode: en
 status: true
 dependencies:
@@ -7,8 +6,6 @@ dependencies:
   module:
     - image
     - user
-_core:
-  default_config_hash: yx0UBMOXYR8EqUf2nB2ZrGxq7KbN9hXkUBQAZVozr3s
 id: user.user.user_picture
 field_name: user_picture
 entity_type: user

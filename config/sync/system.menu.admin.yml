@@ -1,9 +1,6 @@
-uuid: b431616c-4847-4170-878b-10187b5cff2b
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: Mrh9Qd-lOlG8mUOVN1VHHNk4lMxlo54NTPMWXuBH0ag
 id: admin
 label: Administration
 description: 'Administrative task links'

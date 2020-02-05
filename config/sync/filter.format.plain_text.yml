@@ -1,9 +1,6 @@
-uuid: 3fe430c2-7050-4079-88ab-6be5be184181
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: uLm81duyGlE11IpIuCProipgWNIZ3aNQ0k8lqjD_hwk
 name: 'Plain text'
 format: plain_text
 weight: 10

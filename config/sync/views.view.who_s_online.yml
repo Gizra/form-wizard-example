@@ -1,11 +1,8 @@
-uuid: 88f2c801-efa6-4b60-9de9-ce8786deaba3
 langcode: en
 status: true
 dependencies:
   module:
     - user
-_core:
-  default_config_hash: 3gWwAP19kLaJdsipAqCDvfLomltmP5oFDvC-oJTzqDs
 id: who_s_online
 label: 'Who''s online block'
 module: user

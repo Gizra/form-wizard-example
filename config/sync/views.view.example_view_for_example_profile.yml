@@ -1,4 +1,3 @@
-uuid: ffda0212-9654-425f-9d7c-61b84b002d2f
 langcode: en
 status: true
 dependencies:
@@ -8,8 +7,6 @@ dependencies:
   module:
     - node
     - user
-_core:
-  default_config_hash: VqUUnFNu2G6jijCgJRjiR1J5p1ke02Yth7-m2ADadE8
 id: example_view_for_example_profile
 label: 'Example View For Example profile'
 module: views

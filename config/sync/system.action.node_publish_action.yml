@@ -1,11 +1,8 @@
-uuid: 1b50e407-c2e7-434c-bd60-68f2647b8330
 langcode: en
 status: true
 dependencies:
   module:
     - node
-_core:
-  default_config_hash: GI29wpuModFD_Ftup-21UYRe0SS-AOWQAI9QsgWMlik
 id: node_publish_action
 label: 'Publish content'
 type: node

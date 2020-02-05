@@ -1,11 +1,8 @@
-uuid: cea59310-78fb-431e-862b-6c0d1ff49f33
 langcode: en
 status: true
 dependencies:
   module:
     - node
-_core:
-  default_config_hash: 42lTTRVv9hJg9aEUt6UdeUtYI4RTQIpPrbX4tWKdC3A
 id: node_unpublish_action
 label: 'Unpublish content'
 type: node
