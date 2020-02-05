@@ -1,10 +1,7 @@
-name: Example Profile
+name: Wizard
 type: profile
-description: Example for profile creation in Drupal8.
+description: Form wizard example
 core: 8.x
-
-distribution:
-  name: Example Distribution.
 
 dependencies:
   - automated_cron

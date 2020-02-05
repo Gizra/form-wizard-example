@@ -15,7 +15,7 @@ use_dns_when_possible: true
 timezone: ""
 hooks:
   post-start:
-    - exec: drush site-install example_profile -y --db-url=mysql://db:db@db/db --account-pass=admin
+    - exec: drush site-install wizard -y --db-url=mysql://db:db@db/db --account-pass=admin
     - exec: drush uli
 
 
