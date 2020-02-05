@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains wizard_manager.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function wizard_manager_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the wizard_manager module.
+    case 'help.page.wizard_manager':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Logic for Wizard manager.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function wizard_manager_theme() {
+  return [
+    'wizard_manager' => [
+      'render element' => 'children',
+    ],
+  ];
+}

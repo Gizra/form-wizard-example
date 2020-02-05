@@ -1,0 +1,5 @@
+name: 'Wizard manager'
+type: module
+description: 'Logic for Wizard manager.'
+core: 8.x
+package: 'Custom'
