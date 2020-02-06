@@ -14,17 +14,14 @@ nfs_mount_enabled: false
 provider: default
 hooks:
   post-import-db:
-  - exec: drush config-set system.site name "Drupal Elm Starter Server"
   - exec: drush cr
   - exec: drush uli
   post-start:
   - exec: drush site-install server -y --db-url=mysql://db:db@db/db --account-pass=admin
       --existing-config
-  - exec: drush en server_migrate
   - exec: drush cr
-  - exec: drush migrate:import --all
-  - exec: composer global require drupal/coder:8.3.5
-  - exec: composer global require dealerdirect/phpcodesniffer-composer-installer
+  # - exec: composer global require drupal/coder:8.3.5
+  # - exec: composer global require dealerdirect/phpcodesniffer-composer-installer
   - exec: drush uli
 omit_containers: [dba, ddev-ssh-agent]
 use_dns_when_possible: true
