@@ -1,10 +1,10 @@
-name: 'Drupal Elm Starter - Server'
+name: 'Form Wizard Example'
 mail: admin@example.com
 slogan: ''
 page:
   403: ''
   404: ''
-  front: /node
+  front: /visa-application
 admin_compact_mode: false
 weight_select_max: 100
 langcode: en
