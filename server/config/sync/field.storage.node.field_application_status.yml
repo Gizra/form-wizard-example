@@ -1,0 +1,33 @@
+uuid: 7221ed98-f361-4617-93fb-e85d55a9f0c0
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_application_status
+field_name: field_application_status
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: new
+      label: New
+    -
+      value: completed
+      label: Completed
+    -
+      value: accepted
+      label: Accepted
+    -
+      value: rejected
+      label: Rejected
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

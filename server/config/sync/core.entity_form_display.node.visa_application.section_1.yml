@@ -1,0 +1,72 @@
+uuid: 0dd1fb0b-d9f0-4790-8d0b-16dbe237a651
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.node.section_1
+    - field.field.node.visa_application.field_application_status
+    - field.field.node.visa_application.field_birthdate
+    - field.field.node.visa_application.field_first_name
+    - field.field.node.visa_application.field_last_name
+    - node.type.visa_application
+  module:
+    - datetime
+    - field_group
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+  field_group:
+    group_personal_info:
+      children:
+        - field_first_name
+        - field_last_name
+        - field_birthdate
+      parent_name: ''
+      weight: 0
+      format_type: fieldset
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Personal Info'
+id: node.visa_application.section_1
+targetEntityType: node
+bundle: visa_application
+mode: section_1
+content:
+  field_birthdate:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_first_name:
+    weight: 8
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_last_name:
+    weight: 9
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  field_application_status: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  title: true
+  uid: true

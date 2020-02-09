@@ -7,6 +7,10 @@ dependencies:
     - node.type.visa_application
   module:
     - datetime
+    - server_visa_application
+third_party_settings:
+  server_visa_application:
+    faux_required: 1
 id: node.visa_application.field_birthdate
 field_name: field_birthdate
 entity_type: node
