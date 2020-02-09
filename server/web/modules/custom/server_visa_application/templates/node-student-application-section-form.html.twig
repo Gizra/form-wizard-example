@@ -1,0 +1,70 @@
+{% set section_number = form.section_number['#value'] %}
+{% set section_status = form.section_status['#value'] %}
+
+<main class="visa-application-section">
+  <div class="application-status">
+
+    <h1>
+      {% trans %}
+        Section {{ section_number }}:
+      {% endtrans %}
+
+      {% if section_number == 1 %}
+        {{ 'About You' | t }}
+      {% elseif section_number == 2 %}
+        {{ 'Destination' | t }}
+      {% elseif section_number == 3 %}
+        {{ 'Waiver and Release' | t }}
+      {% endif %}
+    </h1>
+
+    <div class="section-status-wrapper">
+
+    {% if section_status == 0 %}
+      <div class="section-status-indicator new">
+        <i class="fa fa-square-o" aria-hidden="true"></i>
+        <div class="status-message">
+          {{ 'Complete this section by entering all of the required fields. You can submit it partially completed and return to it later.' | t }}
+        </div>
+      </div>
+    {% elseif section_status == 1 %}
+      <div class="section-status-indicator partial">
+        <i class="fa fa-square" aria-hidden="true"></i>
+        <div class="status-message">
+          {{ 'This section is partially completed. Finish it by entering all of the required fields or return to the overview to access other sections.' | t }}
+        </div>
+      </div>
+    {% elseif section_status == 2 %}
+        <div class="section-status-indicator complete">
+          <i class="fa fa-check-square-o" aria-hidden="true"></i>
+          <div class="status-message">
+            {{ 'This section is complete. You can continue editing or return to the overview to access other sections.' | t }}
+          </div>
+        </div>
+    {% elseif section_status == 3 %}
+      <div class="section-status-indicator locked">
+        <i class="fa fa-lock" aria-hidden="true"></i>
+        <div class="status-message">
+          {{ 'This section is now locked, and can no longer be edited.' | t }}
+        </div>
+      </div>
+    {% endif %}
+
+    <div class="application-navigation">
+      <a href="{{  path('server_visa_application.server_visa_application_overview') }}">
+        <i class="fa fa-home" aria-hidden="true"></i>
+        {{ 'Return to the overview (without saving)' | t }}
+      </a>
+    </div>
+
+  </div>
+
+    {% if form.section_status_message %}
+      <div class="section-message">
+        {{ form.section_status_message }}
+      </div>
+    {% endif %}
+
+    {{ form | without ('section_status_message')}}
+  </div>
+</main>

@@ -1,0 +1,84 @@
+{#Macro to have Section status a <i> class#}
+{% macro get_section_status_as_class(status) %}
+  {% if status == 0 %}
+    fa-square-o
+  {% elseif status == 1 %}
+    fa-square
+  {% elseif status == 2 %}
+    fa-check-square-o
+  {% elseif status == 3 %}
+    fa-lock
+  {% endif %}
+{% endmacro %}
+
+{#Macro to have Teacher evalaution status a <i> class#}
+{% macro get_teacher_evalaution_status_as_class(status) %}
+  {% if not status %}
+    fa-square-o
+  {% else %}
+    fa-check-square-o
+  {% endif %}
+{% endmacro %}
+
+<main class="container visa-application">
+  <section class="application-header">
+    {% trans %}
+      Visa Application
+    {% endtrans %}
+  </section>
+
+  <section class="application-profile">
+    <div class="profile-image">
+      <img
+        src="{{ user_picture }}"
+        alt="profile pic">
+    </div>
+    <div class="applicant-info">
+      <div class="name">{{ user.displayname }}</div>
+      <div class="applicant-logout">
+        <a href="{{ path('user.logout') }}">{{ 'Log out of my application' | t }}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="application-status"><h2 class="title">{{ 'Important Information about Your Application' | t }}</h2>
+    <div class="status-messages">
+      <div class="general-info message">
+        <div class="icon"><i class="fa fa-pencil" aria-hidden="true"></i></div>
+        <div class="general-info-body">You are applying to be a member of the Schuler Scholar Program. You must currently be in 8th or 9th grade planning to attend one of our partner high schools to apply. If you have questions about eligibility, contact us at <a href="mailto:helpdesk@schulerprogram.org">helpdesk@schulerprogram.org</a> before applying.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="application-steps"><h2 class="title">{{ 'Application Sections' | t  }}</h2>
+    <div class="application-steps-header">
+    </div>
+    <div class="application-steps-list">
+      <div class="list-item">
+        <div class="icon"><i class="fa {{ _self.get_section_status_as_class(sections_status[1]) }}"></i></div>
+        <div class="description">
+          <div class="step-title">
+            <a href="{{  path('server_visa_application.server_visa_application_form', {'section_number': 1}) }}">
+              {{ 'Section 1: Teacher Evaluations' | t }}
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="list-item">
+        <div class="icon"><i class="fa {{ _self.get_section_status_as_class(sections_status[2]) }}"></i></div>
+        <div class="description">
+          <div class="step-title">
+            <a href="{{  path('server_visa_application.server_visa_application_form', {'section_number': 2}) }}">
+              {{ 'Section 3: Waiver and Release' | t }}
+            </a>
+          </div>
+          <div class="step-help">
+            Sign the waiver to release your transcript information and submit your application. You need to do this section with a parent present.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

@@ -13,8 +13,16 @@ use Drupal\Core\Form\FormStateInterface;
  */
 function server_visa_application_theme() {
   return [
-    'server_visa_application' => [
-      'render element' => 'children',
+    'server_visa_application_overview' => [
+      'variables' => [
+        'user' => NULL,
+        'user_picture' => NULL,
+        'sections_status' => [],
+        'current_year' => NULL,
+      ],
+    ],
+    'node_student_application_section_form' => [
+      'render element' => 'form',
     ],
   ];
 }
