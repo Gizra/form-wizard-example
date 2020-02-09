@@ -7,6 +7,8 @@
 
 use Drupal\Core\Entity\EntityDisplayRepository;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Messenger\MessengerInterface;
+use Drupal\server_visa_application\VisaApplicationManagerInterface;
 
 /**
  * Implements hook_theme().
@@ -21,11 +23,129 @@ function server_visa_application_theme() {
         'current_year' => NULL,
       ],
     ],
-    'node_student_application_section_form' => [
+    'node_visa_application_section_form' => [
       'render element' => 'form',
     ],
   ];
 }
+
+function server_visa_application_form_alter($form, $form_state, $form_id) {
+  $is_valid_form = FALSE;
+  foreach (range(1, \Drupal\server_visa_application\VisaApplicationManagerInterface::CONFIRMATION_SECTION_NUMBER) as $index) {
+    if ($form_id == 'node_visa_application_section_' . $index . '_form') {
+      $is_valid_form = TRUE;
+      continue;
+    }
+  }
+  if (!$is_valid_form) {
+    // Not a Visa application form.
+    return;
+  }
+
+  $user = $form_state->getFormObject()->getEntity()->getOwner();
+  $section_number = \Drupal::routeMatch()->getParameter('section_number');
+
+  $form['section_number'] = [
+    '#type' => 'value',
+    '#value' => $section_number,
+  ];
+
+  /** @var \Drupal\server_visa_application\VisaApplicationManagerInterface $visa_application_manager */
+  $visa_application_manager = Drupal::service('server_visa_application.manager');
+  $application_node = $visa_application_manager->getApplicationNodeByUser(Drupal::currentUser());
+
+  $form['section_status'] = [
+    '#type' => 'value',
+    '#value' => $visa_application_manager->getSectionStatus($application_node, $section_number),
+  ];
+
+  // If application is not `New`, then everything should be disabled, as it's
+  // locked for editing by the applicant.
+  $is_application_locked = $application_node->field_application_status->value != VisaApplicationManagerInterface::APPLICATION_NEW;
+
+  // If we're on the Waiver section, then we should be sure to have all other
+  // sections completed.
+  $is_confirmation_section_locked = $section_number == VisaApplicationManagerInterface::CONFIRMATION_SECTION_NUMBER
+    && !$visa_application_manager->applicationCanBeSigned($application_node);
+
+  if ($is_application_locked || $is_confirmation_section_locked) {
+    $form['#disabled'] = TRUE;
+    unset($form['actions']);
+  }
+
+  // Section status messages.
+  if ($is_confirmation_section_locked && ! !$is_application_locked) {
+    $form['section_status_message'] = [
+      '#markup' => t('Waiver section cannot be submitted, as previous sections are not complete yet.'),
+    ];
+  }
+
+  $form['current_language'] = [
+    '#type' => 'value',
+    '#value' => \Drupal::languageManager()->getCurrentLanguage()->getId(),
+  ];
+
+
+  $form['actions']['preview']['#access'] = FALSE;
+  $form['actions']['delete']['#access'] = FALSE;
+
+  // @todo:
+//  $form['#theme'][] = 'node_visa_application_section_form';
+  $form['actions']['submit']['#submit'][] = 'server_visa_application_redirect_form_submit';
+  $form['actions']['submit']['#submit'][] = 'server_visa_application_hide_status_message';
+
+  // Hide vertical tabs and revision log.
+  $form['revision_information']['#access'] = FALSE;
+  $form['meta']['#access'] = FALSE;
+  $form['menu']['#access'] = FALSE;
+}
+
+/**
+ * Submit handler; Handle redirect from sections.
+ *
+ * - If section not completed, keep wizard on the same section.
+ * - If section completed, redirect to next section.
+ * - If waiver completed (last section), redirect to the overview page.
+ */
+function server_visa_application_redirect_form_submit($form, FormStateInterface $form_state) {
+  /** @var \Drupal\server_visa_application\VisaApplicationManagerInterface $application_manager */
+  $application_manager = \Drupal::service('server_visa_application.manager');
+
+  $visa_application = $form_state->getFormObject()->getEntity();
+  $section_number = $form_state->getValue('section_number');
+  $section_status = $application_manager->getSectionStatus($visa_application, $section_number);
+
+  if ($section_number == $application_manager::CONFIRMATION_SECTION_NUMBER
+    && $section_status == $application_manager::SECTION_LOCKED
+  ) {
+    // Redirect back to overview page.
+    $form_state->setRedirect('server_visa_application.server_visa_application_overview');
+    return;
+  }
+
+  if ($section_status == $application_manager::SECTION_COMPLETE) {
+    // Redirect to next section.
+    $section_number = $section_number + 1;
+  }
+
+  $form_state->setRedirect(
+    'server_visa_application.server_visa_application_form',
+    ['section_number' => $section_number]
+  );
+}
+
+/**
+ * Submit handler; Hide the node create/ update messages and add custom.
+ *
+ * @see https://knackforge.com/blog/gurumoorthi/hide-and-override-drupal-status-messages
+ */
+function server_visa_application_hide_status_message($form, FormStateInterface $form_state) {
+  $messenger = \Drupal::messenger();
+  $messenger->deleteByType(MessengerInterface::TYPE_STATUS);
+
+  $messenger->addMessage(t('Section saved.'));
+}
+
 
 /**
  * Implements hook_form_FORM_ID_alter().

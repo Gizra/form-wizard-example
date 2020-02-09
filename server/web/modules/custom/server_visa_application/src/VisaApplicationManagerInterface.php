@@ -33,7 +33,7 @@ interface VisaApplicationManagerInterface {
   /**
    * The section number of the waiver.
    */
-  const WAIVER_SECTION_NUMBER = 3;
+  const CONFIRMATION_SECTION_NUMBER = 3;
 
   /**
    * Application is new or partially filled, but waiver was not submitted yet.

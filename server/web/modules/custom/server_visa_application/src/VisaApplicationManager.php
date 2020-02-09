@@ -234,7 +234,7 @@ class VisaApplicationManager implements VisaApplicationManagerInterface {
    */
   public function getSectionsStatus(NodeInterface $application_node) {
     $return = [];
-    foreach (range(1, self::WAIVER_SECTION_NUMBER) as $section_number) {
+    foreach (range(1, self::CONFIRMATION_SECTION_NUMBER) as $section_number) {
       $return[$section_number] = $this->getSectionStatus($application_node, $section_number);
     }
 
@@ -245,7 +245,7 @@ class VisaApplicationManager implements VisaApplicationManagerInterface {
    * {@inheritDoc}
    */
   public function applicationCanBeSigned(NodeInterface $application_node) {
-    foreach (range(1, self::WAIVER_SECTION_NUMBER - 1) as $section_number) {
+    foreach (range(1, self::CONFIRMATION_SECTION_NUMBER - 1) as $section_number) {
       if ($this->getSectionStatus($application_node, $section_number) != self::SECTION_COMPLETE) {
         return FALSE;
       }

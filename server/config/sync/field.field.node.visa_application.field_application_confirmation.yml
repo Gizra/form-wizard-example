@@ -1,0 +1,28 @@
+uuid: b3aa5e34-2c5c-455c-9ad7-131c0523a7cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_application_confirmation
+    - node.type.visa_application
+  module:
+    - server_visa_application
+third_party_settings:
+  server_visa_application:
+    faux_required: 0
+id: node.visa_application.field_application_confirmation
+field_name: field_application_confirmation
+entity_type: node
+bundle: visa_application
+label: 'Confirm info'
+description: 'By checking this, you confirm all information is correct.'
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
