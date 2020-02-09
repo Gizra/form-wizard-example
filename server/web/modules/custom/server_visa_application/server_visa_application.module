@@ -29,7 +29,10 @@ function server_visa_application_theme() {
   ];
 }
 
-function server_visa_application_form_alter($form, $form_state, $form_id) {
+/**
+ * Implements hook_form_alter().
+ */
+function server_visa_application_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   $is_valid_form = FALSE;
   foreach (range(1, \Drupal\server_visa_application\VisaApplicationManagerInterface::CONFIRMATION_SECTION_NUMBER) as $index) {
     if ($form_id == 'node_visa_application_section_' . $index . '_form') {
@@ -37,12 +40,12 @@ function server_visa_application_form_alter($form, $form_state, $form_id) {
       continue;
     }
   }
+
   if (!$is_valid_form) {
     // Not a Visa application form.
     return;
   }
 
-  $user = $form_state->getFormObject()->getEntity()->getOwner();
   $section_number = \Drupal::routeMatch()->getParameter('section_number');
 
   $form['section_number'] = [
