@@ -1,0 +1,26 @@
+uuid: 02545094-aa69-420a-848d-c69528b12a2d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_destination_country
+    - node.type.visa_application
+  module:
+    - address
+    - server_visa_application
+third_party_settings:
+  server_visa_application:
+    faux_required: 1
+id: node.visa_application.field_destination_country
+field_name: field_destination_country
+entity_type: node
+bundle: visa_application
+label: 'Destination country'
+description: 'Which country do you need the Visa for?'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_countries: {  }
+field_type: address_country

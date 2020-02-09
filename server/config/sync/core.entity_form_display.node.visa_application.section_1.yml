@@ -4,12 +4,15 @@ status: true
 dependencies:
   config:
     - core.entity_form_mode.node.section_1
+    - field.field.node.visa_application.field_address
     - field.field.node.visa_application.field_application_status
     - field.field.node.visa_application.field_birthdate
     - field.field.node.visa_application.field_first_name
     - field.field.node.visa_application.field_last_name
+    - field.field.node.visa_application.field_user_picture
     - node.type.visa_application
   module:
+    - address
     - datetime
     - field_group
     - field_layout
@@ -24,6 +27,7 @@ third_party_settings:
         - field_first_name
         - field_last_name
         - field_birthdate
+        - field_address
       parent_name: ''
       weight: 0
       format_type: fieldset
@@ -39,6 +43,12 @@ targetEntityType: node
 bundle: visa_application
 mode: section_1
 content:
+  field_address:
+    type: address_default
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_birthdate:
     weight: 10
     settings: {  }
@@ -64,6 +74,7 @@ content:
 hidden:
   created: true
   field_application_status: true
+  field_user_picture: true
   path: true
   promote: true
   status: true

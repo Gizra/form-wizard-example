@@ -1,0 +1,47 @@
+uuid: 9ea868a1-f4e9-47a6-9ba4-44ff83cd1c2b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_address
+    - node.type.visa_application
+  module:
+    - address
+    - server_visa_application
+third_party_settings:
+  server_visa_application:
+    faux_required: 1
+id: node.visa_application.field_address
+field_name: field_address
+entity_type: node
+bundle: visa_application
+label: Address
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_countries: {  }
+  langcode_override: ''
+  field_overrides:
+    givenName:
+      override: hidden
+    additionalName:
+      override: hidden
+    familyName:
+      override: hidden
+    organization:
+      override: hidden
+    addressLine2:
+      override: hidden
+    sortingCode:
+      override: hidden
+    dependentLocality:
+      override: hidden
+    locality:
+      override: hidden
+    administrativeArea:
+      override: hidden
+  fields: {  }
+field_type: address

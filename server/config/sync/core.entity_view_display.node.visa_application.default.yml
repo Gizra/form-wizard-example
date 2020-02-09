@@ -3,13 +3,16 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.visa_application.field_address
     - field.field.node.visa_application.field_application_status
     - field.field.node.visa_application.field_birthdate
+    - field.field.node.visa_application.field_destination_country
     - field.field.node.visa_application.field_first_name
     - field.field.node.visa_application.field_last_name
     - field.field.node.visa_application.field_user_picture
     - node.type.visa_application
   module:
+    - address
     - datetime
     - image
     - options
@@ -19,6 +22,13 @@ targetEntityType: node
 bundle: visa_application
 mode: default
 content:
+  field_address:
+    weight: 106
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: address_default
+    region: content
   field_application_status:
     weight: 104
     label: above
@@ -34,6 +44,13 @@ content:
       timezone_override: ''
     third_party_settings: {  }
     type: datetime_default
+    region: content
+  field_destination_country:
+    weight: 107
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: address_country_default
     region: content
   field_first_name:
     weight: 101
