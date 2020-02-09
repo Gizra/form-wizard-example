@@ -7,10 +7,13 @@ dependencies:
     - field.field.node.visa_application.field_birthdate
     - field.field.node.visa_application.field_first_name
     - field.field.node.visa_application.field_last_name
+    - field.field.node.visa_application.field_user_picture
+    - image.style.thumbnail
     - node.type.visa_application
   module:
     - datetime
     - field_layout
+    - image
     - layout_discovery
     - path
 third_party_settings:
@@ -55,6 +58,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_user_picture:
+    weight: 125
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
     region: content
   path:
     type: path

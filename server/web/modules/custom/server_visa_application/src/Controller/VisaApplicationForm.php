@@ -59,7 +59,7 @@ class VisaApplicationForm extends ControllerBase {
    *
    * @var Drupal\server_visa_application\VisaApplicationViewerInterface
    */
-  protected $studentApplicationViewer;
+  protected $visaApplicationViewer;
 
   /**
    * Constructs a new VisaApplicationForm object.
@@ -77,7 +77,7 @@ class VisaApplicationForm extends ControllerBase {
     $this->entityTypeManager = $entity_type_manager;
     $this->formBuilder = $form_builder;
     $this->visaApplicationManager = $visa_application_manager;
-    $this->studentApplicationViewer = $visa_application_viewer;
+    $this->visaApplicationViewer = $visa_application_viewer;
   }
 
   /**
@@ -122,11 +122,11 @@ class VisaApplicationForm extends ControllerBase {
    *   Renderable array.
    */
   public function overview() {
-    $student_application_node = $this->visaApplicationManager->getApplicationNodeByUser($this->account);
-    $sections_status = $this->visaApplicationManager->getSectionsStatus($student_application_node);
+    $visa_application_node = $this->visaApplicationManager->getApplicationNodeByUser($this->account);
+    $sections_status = $this->visaApplicationManager->getSectionsStatus($visa_application_node);
 
-    return $this->studentApplicationViewer->overview(
-      $student_application_node,
+    return $this->visaApplicationViewer->overview(
+      $visa_application_node,
       $sections_status
     );
   }
@@ -171,7 +171,7 @@ class VisaApplicationForm extends ControllerBase {
       return $admin_access;
     }
 
-    if ($node->bundle() != 'student_application') {
+    if ($node->bundle() != 'visa_application') {
       return $node->access('view', $this->account, TRUE);
     }
 

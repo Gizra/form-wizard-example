@@ -20,6 +20,7 @@
         "drupal-composer/drupal-scaffold": "^2.0.1",
         "drupal/address": "^1.7",
         "drupal/admin_toolbar": "^1.26",
+        "drupal/auto_entitylabel": "^3.0@beta",
         "drupal/config_direct_save": "^1.0",
         "drupal/config_ignore": "^2.1",
         "drupal/config_installer": "^1.0",

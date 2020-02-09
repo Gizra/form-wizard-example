@@ -7,9 +7,11 @@ dependencies:
     - field.field.node.visa_application.field_birthdate
     - field.field.node.visa_application.field_first_name
     - field.field.node.visa_application.field_last_name
+    - field.field.node.visa_application.field_user_picture
     - node.type.visa_application
   module:
     - datetime
+    - image
     - options
     - user
 id: node.visa_application.default
@@ -48,6 +50,15 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_user_picture:
+    weight: 105
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
     region: content
   links:
     weight: 100

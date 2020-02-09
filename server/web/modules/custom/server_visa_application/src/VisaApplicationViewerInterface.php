@@ -5,7 +5,7 @@ namespace Drupal\server_visa_application;
 use Drupal\node\NodeInterface;
 
 /**
- * Interface StudentApplicationViewerInterface.
+ * Interface VisaApplicationViewerInterface.
  */
 interface VisaApplicationViewerInterface {
 

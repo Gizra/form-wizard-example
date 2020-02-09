@@ -1,0 +1,6 @@
+status: 1
+pattern: 'Application for [current-user:account-name]'
+escape: false
+dependencies:
+  config:
+    - node.type.visa_application

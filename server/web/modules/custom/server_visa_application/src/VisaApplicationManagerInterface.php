@@ -107,7 +107,7 @@ interface VisaApplicationManagerInterface {
    * Get Application node out of a given Teacher node.
    *
    * @param \Drupal\node\NodeInterface $node
-   *   The node referenced from the Student application.
+   *   The node referenced from the Visa application.
    *
    * @return \Drupal\node\NodeInterface
    *   The Application node referencing the node.

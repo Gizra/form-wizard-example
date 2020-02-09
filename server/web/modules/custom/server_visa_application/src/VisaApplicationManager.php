@@ -56,7 +56,7 @@ class VisaApplicationManager implements VisaApplicationManagerInterface {
       return $this->entityTypeManager->getStorage('node')->load($nid);
     }
 
-    $values = ['type' => 'student_application'];
+    $values = ['type' => 'visa_application'];
     /** @var \Drupal\node\NodeInterface $new_node */
     $new_node = $this->entityTypeManager
       ->getStorage('node')
@@ -173,17 +173,13 @@ class VisaApplicationManager implements VisaApplicationManagerInterface {
    * {@inheritDoc}
    */
   public function getSectionStatus(NodeInterface $application_node, int $section_number) {
-    if ($application_node->getType() != 'student_application') {
-      throw new VisaApplicationException('Not a Student application node');
+    if ($application_node->getType() != 'visa_application') {
+      throw new VisaApplicationException('Not a Visa application node');
     }
 
     // If application is not `New`, then everything should be locked.
     if ($application_node->field_application_status->value != self::APPLICATION_NEW) {
       return self::SECTION_LOCKED;
-    }
-
-    if ($section_number == 1) {
-      return self::section1Status($application_node);
     }
 
     $fields_status = [];
@@ -234,27 +230,6 @@ class VisaApplicationManager implements VisaApplicationManagerInterface {
   }
 
   /**
-   * Special logic for section 1 status.
-   *
-   * @param \Drupal\node\NodeInterface $application_node
-   *   The application node.
-   *
-   * @return int
-   *   The section status.
-   */
-  protected function section1Status(NodeInterface $application_node) {
-    if ($application_node->field_teacher->isEmpty()) {
-      return self::SECTION_NOT_FILLED;
-    }
-
-    $teacher_evaluation_number = $this->getTeacherEvaluationNumber($application_node->getOwner());
-
-    return $application_node->field_teacher->count() < $teacher_evaluation_number
-      ? self::SECTION_PARTIAL
-      : self::SECTION_COMPLETE;
-  }
-
-  /**
    * {@inheritDoc}
    */
   public function getSectionsStatus(NodeInterface $application_node) {
@@ -283,7 +258,7 @@ class VisaApplicationManager implements VisaApplicationManagerInterface {
    * Get the status of the reference sub-section / node.
    *
    * @param \Drupal\node\NodeInterface $application_node
-   *   The student application node.
+   *   The visa application node.
    * @param string $field_name
    *   The name of the reference field.
    *
@@ -341,7 +316,7 @@ class VisaApplicationManager implements VisaApplicationManagerInterface {
 
     $result = $this->entityQuery->get('node')
       ->condition('status', NodeInterface::PUBLISHED)
-      ->condition('type', 'student_application')
+      ->condition('type', 'visa_application')
       ->condition($field_name, $node->id())
       ->range(0, 1)
       ->execute();

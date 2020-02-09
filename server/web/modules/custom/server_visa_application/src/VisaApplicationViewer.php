@@ -7,7 +7,7 @@ use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\node\NodeInterface;
 
 /**
- * Class StudentApplicationViewer.
+ * Class VisaApplicationViewer.
  */
 class VisaApplicationViewer implements VisaApplicationViewerInterface {
 
