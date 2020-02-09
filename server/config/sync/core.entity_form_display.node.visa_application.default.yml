@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.visa_application.field_application_status
     - field.field.node.visa_application.field_birthdate
     - field.field.node.visa_application.field_first_name
     - field.field.node.visa_application.field_last_name
@@ -27,6 +28,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_application_status:
+    weight: 124
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_birthdate:
     weight: 123
     settings: {  }

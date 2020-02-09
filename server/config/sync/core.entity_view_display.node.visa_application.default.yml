@@ -3,18 +3,27 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.visa_application.field_application_status
     - field.field.node.visa_application.field_birthdate
     - field.field.node.visa_application.field_first_name
     - field.field.node.visa_application.field_last_name
     - node.type.visa_application
   module:
     - datetime
+    - options
     - user
 id: node.visa_application.default
 targetEntityType: node
 bundle: visa_application
 mode: default
 content:
+  field_application_status:
+    weight: 104
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
   field_birthdate:
     weight: 103
     label: above
