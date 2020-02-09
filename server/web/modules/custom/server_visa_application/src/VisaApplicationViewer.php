@@ -51,11 +51,8 @@ class VisaApplicationViewer implements VisaApplicationViewerInterface {
       $user_picture = file_create_url($module_path . '/images/default-avatar.png');
     }
 
-    $high_school = $application_node->field_high_school->entity;
-
     $build = [
       '#theme' => 'server_visa_application_overview',
-      '#high_school' => $high_school,
       '#user' => $application_node->getOwner(),
       '#user_picture' => $user_picture,
       '#sections_status' => $sections_status,
