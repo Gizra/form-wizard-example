@@ -1,0 +1,19 @@
+services:
+  theme.negotiator.example:
+    class: Drupal\server_visa_application\Theme\ThemeNegotiator
+    tags:
+      - { name: theme_negotiator, priority: 0 }
+  server_visa_application.manager:
+    class: Drupal\server_visa_application\StudentApplicationManager
+    arguments: ['@entity.manager', '@entity_field.manager', '@entity.query']
+  server_visa_application.route_subscriber:
+    class: Drupal\server_visa_application\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }
+  server_visa_application.viewer:
+    class: Drupal\server_visa_application\StudentApplicationViewer
+    arguments: ['@entity.manager', '@module_handler']
+
+  server_visa_application.form_modes_manager:
+    class: Drupal\server_visa_application\FormModesManager
+    arguments: ['@entity_display.repository']

@@ -46,6 +46,16 @@ function server_visa_application_form_field_config_edit_form_alter(&$form, FormS
   ];
 }
 
+/**
+ * Adds faux required for address - country subfield.
+ *
+ * @todo: needed?
+ */
+function server_visa_application_address_faux_required($element) {
+  $element['country_code']['#title'] .= '<span class="form-required" title="' . t('This field is required.') . '"></span>';
+  return $element;
+}
+
 
 /**
  * Implements hook_entity_type_build().
