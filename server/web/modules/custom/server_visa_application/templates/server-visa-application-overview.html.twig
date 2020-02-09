@@ -53,6 +53,7 @@
     <div class="application-steps-header">
     </div>
     <div class="application-steps-list">
+
       <div class="list-item">
         <div class="icon"><i class="fa {{ _self.get_section_status_as_class(sections_status[1]) }}"></i></div>
         <div class="description">
@@ -68,7 +69,20 @@
         <div class="icon"><i class="fa {{ _self.get_section_status_as_class(sections_status[2]) }}"></i></div>
         <div class="description">
           <div class="step-title">
-            <a href="{{  path('server_visa_application.server_visa_application_form', {'section_number': 2}) }}">
+            <a href="{{  path('schuler_student_application.schuler_student_application_form', {'section_number': 2}) }}">
+              {{ 'Section 2: About You' | t }}
+            </a>
+          </div>
+          <div class="step-time"><i class="fa fa-clock-o" aria-hidden="true"></i> about 10 minutes</div>
+          <div class="step-help">You should be able to do this section with information you already know.</div>
+        </div>
+      </div>
+
+      <div class="list-item">
+        <div class="icon"><i class="fa {{ _self.get_section_status_as_class(sections_status[3]) }}"></i></div>
+        <div class="description">
+          <div class="step-title">
+            <a href="{{  path('server_visa_application.server_visa_application_form', {'section_number': 3}) }}">
               {{ 'Section 3: Waiver and Release' | t }}
             </a>
           </div>
