@@ -1,3 +1,4 @@
+uuid: f84c9717-bf3f-4d7b-9752-f5fac43eb144
 langcode: en
 status: true
 dependencies:
@@ -16,4 +17,7 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
-hidden: {  }
+hidden:
+  field_birthdate: true
+  field_first_name: true
+  field_last_name: true

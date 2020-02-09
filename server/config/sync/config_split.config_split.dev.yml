@@ -1,3 +1,4 @@
+uuid: d0833273-a8e9-4cb7-97b7-0235f6a7c9e7
 langcode: en
 status: true
 dependencies: {  }
@@ -6,15 +7,16 @@ label: Development
 description: 'Configurations only applicable to development environments.'
 folder: ../config/dev
 module:
+  devel: 0
   twig_xdebug: 0
 theme: {  }
 blacklist: {  }
 graylist:
+  - system.logging
+  - views.settings
   - search_api.index.content
   - search_api.server.ddev
   - search_api.server.pantheon
-  - system.logging
-  - views.settings
 graylist_dependents: true
-graylist_skip_equal: true
+graylist_skip_equal: false
 weight: 0

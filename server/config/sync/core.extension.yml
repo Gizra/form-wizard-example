@@ -16,12 +16,12 @@ module:
   contextual: 0
   datetime: 0
   dblog: 0
-  devel: 0
   dynamic_page_cache: 0
   editor: 0
   embed: 0
   entity_browser: 0
   entity_embed: 0
+  environment_indicator: 0
   field: 0
   field_layout: 0
   field_ui: 0
@@ -55,7 +55,6 @@ module:
   text: 0
   toolbar: 0
   tour: 0
-  twig_xdebug: 0
   update: 0
   user: 0
   views_ui: 0
