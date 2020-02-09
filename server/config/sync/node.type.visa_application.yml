@@ -10,7 +10,7 @@ third_party_settings:
     parent: 'main:'
 name: 'Visa Application'
 type: visa_application
-description: ''
+description: 'A single node is for a single Visa application.'
 help: ''
 new_revision: true
 preview_mode: 1
