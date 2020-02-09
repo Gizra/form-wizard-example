@@ -1,4 +1,3 @@
-uuid: a1e3381e-4cf7-4a77-94a2-02a33eaec045
 langcode: en
 status: true
 dependencies:
@@ -48,8 +47,6 @@ third_party_settings:
             additional: {  }
             weight: 1
         third_party_settings: {  }
-_core:
-  default_config_hash: g1S3_GLaxq4l3I9RIca5Mlz02MxI2KmOquZpHw59akM
 id: node.page.default
 targetEntityType: node
 bundle: page

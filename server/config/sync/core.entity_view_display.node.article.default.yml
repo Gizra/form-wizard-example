@@ -1,4 +1,3 @@
-uuid: 5f3da020-3ded-429e-9b6d-a6aed8a87d81
 langcode: en
 status: true
 dependencies:
@@ -105,8 +104,6 @@ third_party_settings:
             additional: {  }
             weight: 4
         third_party_settings: {  }
-_core:
-  default_config_hash: ChmU3AVqDKU32A_fyChG0W9dTRKmVBR58B6OClCLvZI
 id: node.article.default
 targetEntityType: node
 bundle: article

@@ -1,11 +1,8 @@
-uuid: 00d5c2f3-da50-446a-bafa-9cdaf3b6cdee
 langcode: en
 status: true
 dependencies:
   module:
     - views_ui
-_core:
-  default_config_hash: c-HMyZwgeP8H6AITDcq4hznePkd7azpe8xl_WTnx2O0
 id: views-ui
 label: 'View edit page'
 module: views_ui

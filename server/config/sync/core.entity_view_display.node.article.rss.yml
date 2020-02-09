@@ -1,4 +1,3 @@
-uuid: f9961a00-790c-45d2-bb23-65466dbb9ddc
 langcode: en
 status: true
 dependencies:
@@ -36,8 +35,6 @@ third_party_settings:
             additional: {  }
             weight: 0
         third_party_settings: {  }
-_core:
-  default_config_hash: 2rIr6K5Q0UQ9khg0zE_CK-PtJH76UL-BDDZcZnZzwCc
 id: node.article.rss
 targetEntityType: node
 bundle: article

@@ -1,4 +1,3 @@
-uuid: 5a5a3f61-127b-41bc-8f49-f283ea254f3e
 langcode: en
 status: true
 dependencies:
@@ -37,8 +36,6 @@ third_party_settings:
             additional: {  }
             weight: 0
         third_party_settings: {  }
-_core:
-  default_config_hash: orJpHUlAc_wiQLMUjIgEJXGeiqylGHMPcmNRjGtct-M
 id: block_content.basic.default
 targetEntityType: block_content
 bundle: basic

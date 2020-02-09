@@ -1,4 +1,3 @@
-uuid: ae86f6aa-9b0f-4df1-96b9-1edcaf1373df
 langcode: en
 status: true
 dependencies:
@@ -13,8 +12,6 @@ third_party_settings:
   field_layout:
     id: layout_onecol
     settings: {  }
-_core:
-  default_config_hash: I0Pa0aQvT_jawlPo9oz4FE3h_ickc55dYKTPl6gILes
 id: comment.comment.default
 targetEntityType: comment
 bundle: comment

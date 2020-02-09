@@ -1,4 +1,3 @@
-uuid: 7ccfa807-a9c2-428b-b9c7-480553ce6ed0
 langcode: en
 status: true
 dependencies:
@@ -13,8 +12,6 @@ third_party_settings:
   field_layout:
     id: layout_onecol
     settings: {  }
-_core:
-  default_config_hash: tDAk5WjHHzEBR0eK2k8ZlWr7Ji5lCSh_ddgoQnmfsCY
 id: media.video.media_library
 targetEntityType: media
 bundle: video

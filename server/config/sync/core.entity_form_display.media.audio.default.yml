@@ -1,4 +1,3 @@
-uuid: 722ca246-5624-4598-a31b-4d8ed80fdc70
 langcode: en
 status: true
 dependencies:
@@ -14,8 +13,6 @@ third_party_settings:
   field_layout:
     id: layout_onecol
     settings: {  }
-_core:
-  default_config_hash: UFXDqkMaCGpX2ZbXXHWaWbeCNkQjzxB5w0jPpsCoJFI
 id: media.audio.default
 targetEntityType: media
 bundle: audio

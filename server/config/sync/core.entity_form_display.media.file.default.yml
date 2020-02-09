@@ -1,4 +1,3 @@
-uuid: 1d945d0e-d662-4067-afe1-07036ca3bf2f
 langcode: en
 status: true
 dependencies:
@@ -14,8 +13,6 @@ third_party_settings:
   field_layout:
     id: layout_onecol
     settings: {  }
-_core:
-  default_config_hash: nJ_pAVLU1NRMcrKA5fWh2CgKJ805y9T77jH8KS97rkY
 id: media.file.default
 targetEntityType: media
 bundle: file

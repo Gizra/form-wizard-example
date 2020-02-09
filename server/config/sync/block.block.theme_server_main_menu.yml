@@ -1,4 +1,3 @@
-uuid: 2acc4ba8-e709-4f98-94b4-d09d2b76490f
 langcode: en
 status: true
 dependencies:
@@ -8,8 +7,6 @@ dependencies:
     - system
   theme:
     - theme_server
-_core:
-  default_config_hash: rx9IrdDv7Ldc4kpalZAxdhIPZfYIeOMh1N-qKoQZwHo
 id: theme_server_main_menu
 theme: theme_server
 region: header
