@@ -4,16 +4,18 @@ status: true
 dependencies:
   config:
     - core.entity_form_mode.node.section_3
+    - field.field.node.visa_application.field_address
+    - field.field.node.visa_application.field_application_confirmation
     - field.field.node.visa_application.field_application_status
     - field.field.node.visa_application.field_birthdate
+    - field.field.node.visa_application.field_destination_country
     - field.field.node.visa_application.field_first_name
     - field.field.node.visa_application.field_last_name
+    - field.field.node.visa_application.field_user_picture
     - node.type.visa_application
   module:
-    - datetime
     - field_layout
     - layout_discovery
-    - path
 third_party_settings:
   field_layout:
     id: layout_onecol
@@ -23,83 +25,25 @@ targetEntityType: node
 bundle: visa_application
 mode: section_3
 content:
-  created:
-    type: datetime_timestamp
-    weight: 10
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_application_status:
-    weight: 124
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-    region: content
-  field_birthdate:
-    weight: 123
-    settings: {  }
-    third_party_settings: {  }
-    type: datetime_default
-    region: content
-  field_first_name:
-    weight: 121
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
-  field_last_name:
-    weight: 122
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
-  path:
-    type: path
-    weight: 30
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  promote:
+  field_application_confirmation:
     type: boolean_checkbox
+    weight: 0
+    region: content
     settings:
       display_label: true
-    weight: 15
-    region: content
-    third_party_settings: {  }
-  status:
-    type: boolean_checkbox
-    settings:
-      display_label: true
-    weight: 120
-    region: content
-    third_party_settings: {  }
-  sticky:
-    type: boolean_checkbox
-    settings:
-      display_label: true
-    weight: 16
-    region: content
-    third_party_settings: {  }
-  title:
-    type: string_textfield
-    weight: -5
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  uid:
-    type: entity_reference_autocomplete
-    weight: 5
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    region: content
     third_party_settings: {  }
 hidden:
+  created: true
+  field_address: true
+  field_application_status: true
+  field_birthdate: true
+  field_destination_country: true
+  field_first_name: true
+  field_last_name: true
   field_user_picture: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  title: true
+  uid: true

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.visa_application.field_address
+    - field.field.node.visa_application.field_application_confirmation
     - field.field.node.visa_application.field_application_status
     - field.field.node.visa_application.field_birthdate
     - field.field.node.visa_application.field_destination_country
@@ -39,6 +40,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: address_default
+    region: content
+  field_application_confirmation:
+    weight: 128
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
     region: content
   field_application_status:
     weight: 124
