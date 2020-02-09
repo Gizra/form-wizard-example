@@ -5,6 +5,7 @@
  * Contains server_visa_application.module.
  */
 
+use Drupal\Core\Entity\EntityDisplayRepository;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
@@ -43,4 +44,40 @@ function server_visa_application_form_field_config_edit_form_alter(&$form, FormS
     '#description' => t('Mark as required for the Visa application wizard, so we know if a section is partially filled, or completed.'),
     '#default_value' => $field_config->getThirdPartySetting('server_visa_application', 'faux_required'),
   ];
+}
+
+
+/**
+ * Implements hook_entity_type_build().
+ *
+ * Register all form modes for nodes.
+ *
+ * This is copied from "forms_steps" module.
+ * @see https://git.drupalcode.org/project/forms_steps/blob/d6618ad1383dffbe1cd9ab52f28cd7425b8a4721/src/Service/FormsStepsManager.php#L225-250
+ *
+ * @see forms_steps_entity_type_build()
+ */
+function server_visa_application_entity_type_build(array &$entity_types) {
+  /** @var EntityDisplayRepository $entity_display_repository */
+  $entity_display_repository = \Drupal::service('entity_display.repository');
+
+  $all_form_modes = [];
+  $form_modes = $entity_display_repository->getFormModes('node');
+
+  foreach ($form_modes as $key => $value) {
+    if (!empty($key) && $value['targetEntityType'] === 'node') {
+      $all_form_modes['node'][] = $key;
+    }
+  }
+
+  // We parse each entity type.
+  foreach ($all_form_modes as $entity_type_id => $form_modes) {
+    // We parse and set each form_mode.
+    foreach ($form_modes as $form_mode) {
+      $entity_types[$entity_type_id]->setFormClass(
+        $form_mode,
+        'Drupal\node\NodeForm'
+      );
+    }
+  }
 }
