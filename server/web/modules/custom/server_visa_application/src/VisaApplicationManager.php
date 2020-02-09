@@ -63,7 +63,8 @@ class VisaApplicationManager implements VisaApplicationManagerInterface {
       ->create($values);
 
     // Set the author.
-    $new_node->setOwner($user);
+    $full_user = $this->entityTypeManager->getStorage('user')->load($user->id());
+    $new_node->setOwner($full_user);
     $new_node->save();
 
     return $new_node;
@@ -127,15 +128,6 @@ class VisaApplicationManager implements VisaApplicationManagerInterface {
       $field_definition = $field_definitions[$field_name];
       if ($field_definition->getThirdPartySetting('server_visa_application', 'faux_required')) {
         $field_names_to_validate_that_are_faux_required[$field_name] = $field_name;
-      }
-    }
-
-    // Exclude non-required sections.
-    $sections = $this->getSectionDefinitions();
-    $optional_sections = $this->getOptionalSections($node->getOwner());
-    foreach ($optional_sections as $section) {
-      foreach ($sections[$section] as $section_field) {
-        unset($field_names_to_validate_that_are_faux_required[$section_field]);
       }
     }
 

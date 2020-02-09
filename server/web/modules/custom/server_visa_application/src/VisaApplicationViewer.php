@@ -59,14 +59,8 @@ class VisaApplicationViewer implements VisaApplicationViewerInterface {
       '#user' => $application_node->getOwner(),
       '#user_picture' => $user_picture,
       '#sections_status' => $sections_status,
-      '#teacher_evaluations_status' => $teacher_evaluations_status,
       '#current_year' => date('Y'),
     ];
-
-    $build['#application_due_date_past'] = $due_date_past;
-    if ($high_school->field_application_due_date->value) {
-      $build['#application_due_date'] = $high_school->field_application_due_date->date->format('l, F j, Y - g:ia T', ['timezone' => StudentApplicationManagerInterface::DUE_DATE_TIMEZONE]);
-    }
 
     $build['#cache']['contexts'] = [
       'user',
@@ -77,8 +71,6 @@ class VisaApplicationViewer implements VisaApplicationViewerInterface {
       // We have several nodes that participates in the application form.
       'node_list',
     ];
-
-    $build['#attached']['library'][] = 'schuler_theme/font-awesome';
 
     return $build;
   }

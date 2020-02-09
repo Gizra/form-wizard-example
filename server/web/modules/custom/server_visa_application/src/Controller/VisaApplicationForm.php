@@ -52,7 +52,7 @@ class VisaApplicationForm extends ControllerBase {
    *
    * @var Drupal\server_visa_application\VisaApplicationManagerInterface
    */
-  protected $studentApplicationManager;
+  protected $visaApplicationManager;
 
   /**
    * Visa application viewer.
@@ -69,15 +69,15 @@ class VisaApplicationForm extends ControllerBase {
     LanguageManagerInterface $language_manager,
     EntityTypeManagerInterface $entity_type_manager,
     FormBuilderInterface $form_builder,
-    VisaApplicationManagerInterface $student_application_manager,
-    VisaApplicationViewerInterface $student_application_viewer
+    VisaApplicationManagerInterface $visa_application_manager,
+    VisaApplicationViewerInterface $visa_application_viewer
   ) {
     $this->account = $account;
     $this->languageManager = $language_manager;
     $this->entityTypeManager = $entity_type_manager;
     $this->formBuilder = $form_builder;
-    $this->studentApplicationManager = $student_application_manager;
-    $this->studentApplicationViewer = $student_application_viewer;
+    $this->visaApplicationManager = $visa_application_manager;
+    $this->studentApplicationViewer = $visa_application_viewer;
   }
 
   /**
@@ -104,15 +104,13 @@ class VisaApplicationForm extends ControllerBase {
    *   Renderable array.
    */
   public function main(int $section_number) {
-    $high_school = $this->studentApplicationManager->getSchoolFromUser($this->account);
-    $node = $this->studentApplicationManager->getApplicationNodeBySchoolAndUser($high_school, $this->account);
+    $node = $this->visaApplicationManager->getApplicationNodeByUser($this->account);
 
     $form = $this->entityTypeManager
       ->getFormObject('node', 'section_' . $section_number)
       ->setEntity($node);
 
     $build = $this->formBuilder->getForm($form);
-    $build['#attributes']['autocomplete'] = 'off';
 
     return $build;
   }
@@ -124,17 +122,12 @@ class VisaApplicationForm extends ControllerBase {
    *   Renderable array.
    */
   public function overview() {
-    $high_school = $this->studentApplicationManager->getSchoolFromUser($this->account->getAccount());
-    $student_application_node = $this->studentApplicationManager->getApplicationNodeBySchoolAndUser($high_school, $this->account);
-    $sections_status = $this->studentApplicationManager->getSectionsStatus($student_application_node);
-    $teacher_evaluations_status = $this->studentApplicationManager->getTeacherEvaluationsStatus($student_application_node);
-    $due_date_past = $this->studentApplicationManager->applicationPastDueDate($this->account->getAccount());
+    $student_application_node = $this->visaApplicationManager->getApplicationNodeByUser($this->account);
+    $sections_status = $this->visaApplicationManager->getSectionsStatus($student_application_node);
 
     return $this->studentApplicationViewer->overview(
       $student_application_node,
-      $sections_status,
-      $teacher_evaluations_status,
-      $due_date_past
+      $sections_status
     );
   }
 
@@ -148,9 +141,9 @@ class VisaApplicationForm extends ControllerBase {
    *   The access result.
    */
   public function applicationFormAccess(AccountInterface $account) {
-    // Access allowed if the user is attached to a school.
+    // @todo: Needed?
     try {
-      $this->studentApplicationManager->getSchoolFromUser($account);
+      $this->visaApplicationManager->getApplicationNodeByUser($account);
       return AccessResult::allowed();
     }
     catch (\Exception $e) {

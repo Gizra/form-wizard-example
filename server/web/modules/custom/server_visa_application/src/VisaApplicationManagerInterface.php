@@ -114,13 +114,4 @@ interface VisaApplicationManagerInterface {
    */
   public function getApplicationFromNode(NodeInterface $node);
 
-
-  /**
-   * Section definitions.
-   *
-   * @return array
-   *   Section ID and related fields.
-   */
-  public function getSectionDefinitions();
-
 }
