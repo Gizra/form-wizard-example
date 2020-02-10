@@ -49,6 +49,10 @@ class VisaApplicationManager implements VisaApplicationManagerInterface {
    * {@inheritDoc}
    */
   public function getApplicationNodeByUser(AccountInterface $user) {
+    if (!$user->id()) {
+      throw new VisaApplicationException('Visa application belong only to authenticated users.');
+    }
+
     /** @var \Drupal\node\NodeInterface $node */
     $nid = $this->getExistingApplicationNodeByUser($user);
 

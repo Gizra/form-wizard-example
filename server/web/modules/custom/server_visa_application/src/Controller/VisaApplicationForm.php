@@ -141,7 +141,6 @@ class VisaApplicationForm extends ControllerBase {
    *   The access result.
    */
   public function applicationFormAccess(AccountInterface $account) {
-    // @todo: Needed?
     try {
       $this->visaApplicationManager->getApplicationNodeByUser($account);
       return AccessResult::allowed();
