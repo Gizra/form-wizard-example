@@ -269,7 +269,7 @@ function server_visa_application_remove_radio_na($element, FormStateInterface $f
  * Implements hook_node_presave().
  */
 function server_visa_application_node_presave(NodeInterface $node) {
-  server_visa_application_set_status_after_waiver($node);
+  server_visa_application_set_status_after_confirmation($node);
 }
 
 /**
@@ -278,7 +278,7 @@ function server_visa_application_node_presave(NodeInterface $node) {
  * @param \Drupal\node\NodeInterface $node
  *   The Visa application node.
  */
-function server_visa_application_set_status_after_waiver(NodeInterface $node) {
+function server_visa_application_set_status_after_confirmation(NodeInterface $node) {
   if ($node->bundle() != 'visa_application') {
     // Not a Student application.
     return;
@@ -302,11 +302,9 @@ function server_visa_application_set_status_after_waiver(NodeInterface $node) {
   }
 
   // Lock Application if Confirmation was given.
-  $old_status = VisaApplicationManagerInterface::APPLICATION_NEW;
   if (!empty($node->field_application_confiramtion->value)
-    && $node->field_application_status->value == $old_status) {
-    $new_status = VisaApplicationManagerInterface::APPLICATION_LOCKED;
-    $node->field_application_status->value = $new_status;
+    && $node->field_application_status->value == VisaApplicationManagerInterface::APPLICATION_NEW) {
+    $node->field_application_status->value = VisaApplicationManagerInterface::APPLICATION_LOCKED;
   }
 }
 
