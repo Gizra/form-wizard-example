@@ -23,9 +23,14 @@
     {% if section_status == 0 %}
       <div class="section-status-indicator new">
         <i class="fa fa-square-o" aria-hidden="true"></i>
-        <div class="status-message">
-          {{ 'Complete this section by entering all of the required fields. You can submit it partially completed and return to it later.' | t }}
-        </div>
+
+        {% if section_number != 3 %}
+          {# Don't show this message on the confirmation page.#}
+          <div class="status-message">
+            {{ 'Complete this section by entering all of the required fields. You can submit it partially completed and return to it later.' | t }}
+          </div>
+        {% endif %}
+
       </div>
     {% elseif section_status == 1 %}
       <div class="section-status-indicator partial">

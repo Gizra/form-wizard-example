@@ -8,6 +8,8 @@
 use Drupal\Core\Entity\EntityDisplayRepository;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Messenger\MessengerInterface;
+use Drupal\Core\Render\Element;
+use Drupal\field\FieldConfigInterface;
 use Drupal\server_visa_application\VisaApplicationManagerInterface;
 
 /**
@@ -77,7 +79,7 @@ function server_visa_application_form_alter(&$form, FormStateInterface $form_sta
   }
 
   // Section status messages.
-  if ($is_confirmation_section_locked && ! !$is_application_locked) {
+  if ($is_confirmation_section_locked && !$is_application_locked) {
     $form['section_status_message'] = [
       '#markup' => t('Waiver section cannot be submitted, as previous sections are not complete yet.'),
     ];
@@ -183,6 +185,43 @@ function server_visa_application_form_field_config_edit_form_alter(&$form, FormS
 function server_visa_application_address_faux_required($element) {
   $element['country_code']['#title'] .= '<span class="form-required" title="' . t('This field is required.') . '"></span>';
   return $element;
+}
+
+/**
+ * Implements hook_field_widget_form_alter().
+ *
+ * Mark faux required fields with `form-required` class.
+ */
+function server_visa_application_field_widget_form_alter(&$element, FormStateInterface &$form_state, $context) {
+  if (!empty($element['#required'])) {
+    // Element is already marked as required.
+    return;
+  }
+
+  /** @var \Drupal\field\Entity\FieldConfig $field_definition */
+  $field_definition = $context['items']->getFieldDefinition();
+  if (!($field_definition instanceof FieldConfigInterface)) {
+    // Not a configurable field.
+    return;
+  }
+  if (!$field_definition->getThirdPartySetting('server_visa_application', 'faux_required', FALSE)) {
+    // Faux required is not enabled.
+    return;
+  }
+
+  $element['#label_attributes']['class'][] = 'form-required';
+  // Pass along to preprocess functions the info.
+  $element['#faux_required'] = TRUE;
+
+  $element_copy = $element;
+  $element_children = Element::children($element_copy);
+
+  // This is a more complex field (e.g. a fieldset of checkboxes).
+  foreach ($element_children as $key) {
+    $element[$key]['#label_attributes']['class'][] = 'form-required';
+    $element[$key]['#faux_required'] = TRUE;
+  }
+
 }
 
 
