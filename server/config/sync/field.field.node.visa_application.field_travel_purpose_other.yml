@@ -1,0 +1,24 @@
+uuid: 93cd9a27-8dff-4295-8a67-3526c8c11503
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_travel_purpose_other
+    - node.type.visa_application
+  module:
+    - server_visa_application
+third_party_settings:
+  server_visa_application:
+    faux_required: 1
+id: node.visa_application.field_travel_purpose_other
+field_name: field_travel_purpose_other
+entity_type: node
+bundle: visa_application
+label: Other
+description: 'Describe the reason of the travel.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

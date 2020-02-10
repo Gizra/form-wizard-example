@@ -1,0 +1,33 @@
+uuid: 14a65315-dd9c-4d09-8318-64902abab5d0
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_travel_purpose
+field_name: field_travel_purpose
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: vacation
+      label: Vacation
+    -
+      value: work
+      label: Work
+    -
+      value: family
+      label: Family
+    -
+      value: other
+      label: Other
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

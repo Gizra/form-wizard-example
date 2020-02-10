@@ -1,0 +1,25 @@
+uuid: 7cd5d379-615a-49de-a4ac-55dfd83adf2a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_travel_purpose
+    - node.type.visa_application
+  module:
+    - options
+    - server_visa_application
+third_party_settings:
+  server_visa_application:
+    faux_required: 1
+id: node.visa_application.field_travel_purpose
+field_name: field_travel_purpose
+entity_type: node
+bundle: visa_application
+label: 'Travel purpose'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -10,6 +10,8 @@ dependencies:
     - field.field.node.visa_application.field_destination_country
     - field.field.node.visa_application.field_first_name
     - field.field.node.visa_application.field_last_name
+    - field.field.node.visa_application.field_travel_purpose
+    - field.field.node.visa_application.field_travel_purpose_other
     - field.field.node.visa_application.field_user_picture
     - node.type.visa_application
   module:
@@ -78,6 +80,20 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_travel_purpose:
+    weight: 109
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_travel_purpose_other:
+    weight: 110
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
     region: content
   field_user_picture:
     weight: 105
