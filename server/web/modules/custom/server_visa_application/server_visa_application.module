@@ -9,6 +9,7 @@ use Drupal\Core\Entity\EntityDisplayRepository;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\Core\Render\Element;
+use Drupal\field\Entity\FieldStorageConfig;
 use Drupal\field\FieldConfigInterface;
 use Drupal\server_visa_application\VisaApplicationManagerInterface;
 
@@ -223,6 +224,45 @@ function server_visa_application_field_widget_form_alter(&$element, FormStateInt
   }
 
 }
+
+/**
+ * Implements hook_element_info_alter().
+ */
+function server_visa_application_element_info_alter(array &$types) {
+  if (isset($types['radios'])) {
+    $types['radios']['#process'][] = 'server_visa_application_remove_radio_na';
+  }
+}
+
+
+/**
+ * Process callback for elements on student application form.
+ *
+ * - Removes N/A option from boolean radios and select lists.
+ * - Sets 'Yes' as first option for boolean radios.
+ */
+function server_visa_application_remove_radio_na($element, FormStateInterface $form_state, $form) {
+  if (strpos($form['#form_id'], 'node_visa_application_section_') !== 0) {
+    return $element;
+  }
+
+  $field_type = FieldStorageConfig::loadByName($form['#entity_type'], $element['#field_name'])->getType();
+
+  if ($field_type == 'boolean') {
+    // Remove N/A.
+    unset($element['_none']);
+    // Display No after Yes.
+    $element['0']['#weight'] = 10;
+  }
+
+  if ($field_type == 'list_string') {
+    // Remove N/A.
+    unset($element['_none']);
+  }
+
+  return $element;
+}
+
 
 
 /**
