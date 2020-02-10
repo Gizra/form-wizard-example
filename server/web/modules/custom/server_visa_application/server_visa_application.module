@@ -34,6 +34,20 @@ function server_visa_application_theme() {
 }
 
 /**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Specific form alters for Section 3.
+ *
+ * Set "Confirmation" checkbox to required. We don't do this on the field
+ * settings as we want to let admins edit the application node, without needing
+ * to check the checkbox.Instead, we make it required only under the wizard
+ * context.
+ */
+function server_visa_application_form_node_visa_application_section_3_form_alter(&$form, FormStateInterface $form_state) {
+  $form['field_application_confirmation']['widget']['value']['#required'] = TRUE;
+}
+
+/**
  * Implements hook_form_alter().
  */
 function server_visa_application_form_alter(&$form, FormStateInterface $form_state, $form_id) {

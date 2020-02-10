@@ -10,11 +10,11 @@
       {% endtrans %}
 
       {% if section_number == 1 %}
-        {{ 'About You' | t }}
+        {{ 'Personal information' | t }}
       {% elseif section_number == 2 %}
-        {{ 'Destination' | t }}
+        {{ 'Travel information' | t }}
       {% elseif section_number == 3 %}
-        {{ 'Waiver and Release' | t }}
+        {{ 'Sign and confirm' | t }}
       {% endif %}
     </h1>
 
@@ -58,7 +58,16 @@
     <div class="application-navigation">
       <a href="{{  path('server_visa_application.server_visa_application_overview') }}">
         <i class="fa fa-home" aria-hidden="true"></i>
-        {{ 'Return to the overview (without saving)' | t }}
+
+
+        {% if section_status == 3 %}
+          {{ 'Return to the overview' | t }}
+        {% else %}
+          {{ 'Return to the overview (without saving)' | t }}
+        {% endif %}
+
+
+
       </a>
     </div>
 
