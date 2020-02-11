@@ -392,12 +392,6 @@ function server_visa_application_mark_faux_required_as_required(array &$variable
     return;
   }
 
-  // This is a fieldgroup, which we cannot mark faux required, but we need
-  // to style like that.
-  if (isset($variables['element']['field_personal_essay'])) {
-    $variables['required'] = TRUE;
-  }
-
   $element = $variables['element'];
   $variables['required'] = !empty($variables['required']) || !empty($element['#faux_required']);
 }
