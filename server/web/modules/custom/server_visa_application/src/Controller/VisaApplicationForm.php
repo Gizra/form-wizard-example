@@ -164,17 +164,13 @@ class VisaApplicationForm extends ControllerBase {
    *   The access result.
    */
   public function nodeAccess(AccountInterface $account, NodeInterface $node = NULL, string $node_type = NULL) {
-    $admin_access = AccessResult::allowedIf($account->hasPermission('administer nodes'));
+    $admin_access = $account->hasPermission('administer nodes') ? AccessResult::allowed() : AccessResult::forbidden();
     if (empty($node) && !empty($node_type)) {
       // Only site admins or content editors should have access.
       return $admin_access;
     }
 
-    if ($node->bundle() != 'visa_application') {
-      return $node->access('view', $this->account, TRUE);
-    }
-
-    return $admin_access;
+    return $node->access('view', $this->account, TRUE);
   }
 
 }

@@ -12,6 +12,9 @@ class RouteSubscriber extends RouteSubscriberBase {
 
   /**
    * {@inheritdoc}
+   *
+   * Make sure non-admins cannot view, edit or delete Visa applications nodes.
+   * They have to go through the wizard to do so.
    */
   protected function alterRoutes(RouteCollection $collection) {
     $route_names = [

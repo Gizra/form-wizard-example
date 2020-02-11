@@ -11,6 +11,7 @@ permissions:
   - 'access content'
   - 'access shortcuts'
   - 'access site-wide contact form'
+  - 'edit own visa_application content'
   - 'post comments'
   - 'search content'
   - 'skip comment approval'

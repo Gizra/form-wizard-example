@@ -5,10 +5,12 @@
  * Contains server_visa_application.module.
  */
 
+use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Entity\EntityDisplayRepository;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\Core\Render\Element;
+use Drupal\Core\Session\AccountInterface;
 use Drupal\field\Entity\FieldStorageConfig;
 use Drupal\field\FieldConfigInterface;
 use Drupal\node\NodeInterface;
@@ -278,6 +280,33 @@ function server_visa_application_remove_radio_na($element, FormStateInterface $f
   return $element;
 }
 
+/**
+ * Implements hook_node_access().
+ *
+ * Allow editing Teacher evaluation node based on unique access token.
+ */
+function server_visa_application_node_access(NodeInterface $node, $op, AccountInterface $account) {
+  $neutral = AccessResult::neutral();
+
+  if ($node->bundle() != 'visa_application') {
+    // Not a node related to a Visa application.
+    return $neutral;
+  }
+
+  $admin_access = $account->hasPermission('administer nodes') ? AccessResult::allowed() : AccessResult::forbidden();
+
+  if ($op == 'view') {
+    return $admin_access;
+  }
+
+  $route_name = \Drupal::routeMatch()->getRouteName();
+  if ($op == 'update' && $route_name == 'entity.node.edit_form') {
+    // Node edit route.
+    return $admin_access;
+  }
+
+  return AccessResult::allowed();
+}
 
 /**
  * Implements hook_node_presave().
