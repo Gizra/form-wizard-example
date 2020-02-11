@@ -316,7 +316,7 @@ function server_visa_application_set_status_after_confirmation(NodeInterface $no
   }
 
   // Lock Application if Confirmation was given.
-  if (!empty($node->field_application_confiramtion->value)
+  if (!empty($node->field_application_confirmation->value)
     && $node->field_application_status->value == VisaApplicationManagerInterface::APPLICATION_NEW) {
     $node->field_application_status->value = VisaApplicationManagerInterface::APPLICATION_LOCKED;
   }
