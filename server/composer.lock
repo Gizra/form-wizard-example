@@ -2210,6 +2210,10 @@
                     "homepage": "https://www.drupal.org/user/386230"
                 },
                 {
+                    "name": "jsacksick",
+                    "homepage": "https://www.drupal.org/user/972218"
+                },
+                {
                     "name": "mglaman",
                     "homepage": "https://www.drupal.org/user/2416470"
                 },
@@ -2578,7 +2582,7 @@
             "description": "This module allow you to export configuration after changes",
             "homepage": "https://www.drupal.org/project/config_direct_save",
             "support": {
-                "source": "http://cgit.drupalcode.org/config_direct_save"
+                "source": "https://git.drupalcode.org/project/config_direct_save"
             }
         },
         {
@@ -2608,7 +2612,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.4",
-                    "datestamp": "1542184982",
+                    "datestamp": "1572542288",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2675,7 +2679,7 @@
                 },
                 "drupal": {
                     "version": "8.x-2.1",
-                    "datestamp": "1507706044",
+                    "datestamp": "1576528386",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2697,6 +2701,10 @@
                     "name": "Fabian Bircher",
                     "homepage": "https://www.drupal.org/u/bircher",
                     "role": "Maintainer"
+                },
+                {
+                    "name": "tlyngej",
+                    "homepage": "https://www.drupal.org/user/413139"
                 }
             ],
             "description": "Ignore certain configuration during import.",
@@ -2750,7 +2758,7 @@
             ],
             "homepage": "https://www.drupal.org/project/config_installer",
             "support": {
-                "source": "http://cgit.drupalcode.org/config_installer"
+                "source": "https://git.drupalcode.org/project/config_installer"
             }
         },
         {
@@ -3369,6 +3377,10 @@
                     "homepage": "https://www.drupal.org/user/3260690"
                 },
                 {
+                    "name": "phenaproxima",
+                    "homepage": "https://www.drupal.org/user/205645"
+                },
+                {
                     "name": "slashrsm",
                     "homepage": "https://www.drupal.org/user/744628"
                 },
@@ -3483,7 +3495,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/dropzonejs.git",
-                "reference": "e85be9f6c771488b4bd041f4077569c7048284cb"
+                "reference": "0f54da5a044aa6c8aeeebe56c7ba9787e901e0c3"
             },
             "require": {
                 "drupal/core": "*"
@@ -3500,11 +3512,11 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.0-alpha3+9-dev",
-                    "datestamp": "1553860081",
+                    "version": "8.x-2.0-alpha5+4-dev",
+                    "datestamp": "1579098483",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "Project has not opted into security advisory coverage!"
+                        "message": "Dev releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -3557,7 +3569,7 @@
                 "issues": "https://www.drupal.org/project/issues/dropzonejs",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
             },
-            "time": "2019-03-29T11:45:41+00:00"
+            "time": "2020-02-07T09:24:39+00:00"
         },
         {
             "name": "drupal/embed",
@@ -3583,7 +3595,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0",
-                    "datestamp": "1490755685",
+                    "datestamp": "1575666184",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3619,7 +3631,7 @@
             "description": "Provide a framework for various different types of embeds in WYSIWYG editors, common functionality, interfaces, and standards.",
             "homepage": "https://www.drupal.org/project/embed",
             "support": {
-                "source": "http://cgit.drupalcode.org/embed",
+                "source": "https://git.drupalcode.org/project/embed",
                 "issues": "https://www.drupal.org/project/issues/embed",
                 "irc": "irc://irc.freenode.org/drupal-media"
             }
@@ -3654,7 +3666,7 @@
                 },
                 "drupal": {
                     "version": "8.x-2.1",
-                    "datestamp": "1550237365",
+                    "datestamp": "1562240585",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3813,7 +3825,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.6",
-                    "datestamp": "1539588781",
+                    "datestamp": "1570284187",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3825,6 +3837,10 @@
                 "GPL-2.0-or-later"
             ],
             "authors": [
+                {
+                    "name": "Berdir",
+                    "homepage": "https://www.drupal.org/user/214652"
+                },
                 {
                     "name": "Frans",
                     "homepage": "https://www.drupal.org/user/514222"
@@ -3841,7 +3857,7 @@
             "description": "Adds a Entity Reference field type with revision support.",
             "homepage": "https://www.drupal.org/project/entity_reference_revisions",
             "support": {
-                "source": "http://cgit.drupalcode.org/entity_reference_revisions"
+                "source": "https://git.drupalcode.org/project/entity_reference_revisions"
             }
         },
         {
@@ -3986,7 +4002,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0",
-                    "datestamp": "1553270584",
+                    "datestamp": "1568206088",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4158,7 +4174,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.8",
-                    "datestamp": "1550692511",
+                    "datestamp": "1563995941",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4396,7 +4412,7 @@
                 },
                 "drupal": {
                     "version": "8.x-4.1",
-                    "datestamp": "1546879080",
+                    "datestamp": "1565213885",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4475,7 +4491,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.8",
-                    "datestamp": "1553618281",
+                    "datestamp": "1565881389",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4502,6 +4518,10 @@
                 {
                     "name": "jeroen.b",
                     "homepage": "https://www.drupal.org/user/1853532"
+                },
+                {
+                    "name": "jstoller",
+                    "homepage": "https://www.drupal.org/user/99012"
                 },
                 {
                     "name": "miro_dietiker",
@@ -4540,7 +4560,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.4",
-                    "datestamp": "1554239887",
+                    "datestamp": "1570828084",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4599,7 +4619,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.3",
-                    "datestamp": "1539682684",
+                    "datestamp": "1561757585",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4663,7 +4683,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.13",
-                    "datestamp": "1557244685",
+                    "datestamp": "1562599986",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4752,7 +4772,7 @@
             "description": "Search API + Solr + Pantheon integration",
             "homepage": "https://www.drupal.org/project/search_api_pantheon",
             "support": {
-                "source": "http://cgit.drupalcode.org/search_api_pantheon"
+                "source": "https://git.drupalcode.org/project/search_api_pantheon"
             }
         },
         {
@@ -4792,7 +4812,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.2",
-                    "datestamp": "1549962207",
+                    "datestamp": "1575044885",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4866,7 +4886,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.1",
-                    "datestamp": "1542788880",
+                    "datestamp": "1564054685",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4899,7 +4919,7 @@
             "description": "Integration with the select2 JavaScript library.",
             "homepage": "https://www.drupal.org/project/select2",
             "support": {
-                "source": "http://cgit.drupalcode.org/select2"
+                "source": "https://git.drupalcode.org/project/select2"
             }
         },
         {
@@ -4949,7 +4969,7 @@
             "description": "Widget for text fields to offer pre-define values for selection",
             "homepage": "https://www.drupal.org/project/select_text_value",
             "support": {
-                "source": "http://cgit.drupalcode.org/select_text_value"
+                "source": "https://git.drupalcode.org/project/select_text_value"
             }
         },
         {
@@ -4996,7 +5016,7 @@
             "description": "Provides simple title/content custom blocks stored as config entities and not as content entities.",
             "homepage": "https://www.drupal.org/project/simple_block",
             "support": {
-                "source": "http://cgit.drupalcode.org/simple_block"
+                "source": "https://git.drupalcode.org/project/simple_block"
             }
         },
         {
@@ -5073,7 +5093,7 @@
                 },
                 "drupal": {
                     "version": "8.x-2.7",
-                    "datestamp": "1557490398",
+                    "datestamp": "1562254085",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5146,7 +5166,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.5",
-                    "datestamp": "1537557481",
+                    "datestamp": "1577708583",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5186,7 +5206,7 @@
             "description": "Provides a user interface for the Token API and some missing core tokens.",
             "homepage": "https://www.drupal.org/project/token",
             "support": {
-                "source": "http://cgit.drupalcode.org/token"
+                "source": "https://git.drupalcode.org/project/token"
             }
         },
         {
@@ -5217,7 +5237,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0-alpha3",
-                    "datestamp": "1538607180",
+                    "datestamp": "1575402780",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Alpha releases are not covered by Drupal security advisories."
@@ -7604,16 +7624,16 @@
         },
         {
             "name": "symfony/http-foundation",
-            "version": "v3.4.28",
+            "version": "v3.4.37",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
-                "reference": "677ae5e892b081e71a665bfa7dd90fe61800c00e"
+                "reference": "f3abd07a56111ebe6a1ad6f1cbc23e4f8983f8f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/677ae5e892b081e71a665bfa7dd90fe61800c00e",
-                "reference": "677ae5e892b081e71a665bfa7dd90fe61800c00e",
+                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/f3abd07a56111ebe6a1ad6f1cbc23e4f8983f8f5",
+                "reference": "f3abd07a56111ebe6a1ad6f1cbc23e4f8983f8f5",
                 "shasum": ""
             },
             "require": {
@@ -7654,7 +7674,7 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
-            "time": "2019-05-27T05:50:24+00:00"
+            "time": "2020-01-04T12:05:51+00:00"
         },
         {
             "name": "symfony/http-kernel",
@@ -7864,16 +7884,16 @@
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.11.0",
+            "version": "v1.13.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "fe5e94c604826c35a32fa832f35bd036b6799609"
+                "reference": "7b4aab9743c30be783b73de055d24a39cf4b954f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/fe5e94c604826c35a32fa832f35bd036b6799609",
-                "reference": "fe5e94c604826c35a32fa832f35bd036b6799609",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/7b4aab9743c30be783b73de055d24a39cf4b954f",
+                "reference": "7b4aab9743c30be783b73de055d24a39cf4b954f",
                 "shasum": ""
             },
             "require": {
@@ -7885,7 +7905,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.11-dev"
+                    "dev-master": "1.13-dev"
                 }
             },
             "autoload": {
@@ -7919,20 +7939,20 @@
                 "portable",
                 "shim"
             ],
-            "time": "2019-02-06T07:57:58+00:00"
+            "time": "2019-11-27T14:18:11+00:00"
         },
         {
             "name": "symfony/polyfill-php70",
-            "version": "v1.11.0",
+            "version": "v1.13.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php70.git",
-                "reference": "bc4858fb611bda58719124ca079baff854149c89"
+                "reference": "af23c7bb26a73b850840823662dda371484926c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php70/zipball/bc4858fb611bda58719124ca079baff854149c89",
-                "reference": "bc4858fb611bda58719124ca079baff854149c89",
+                "url": "https://api.github.com/repos/symfony/polyfill-php70/zipball/af23c7bb26a73b850840823662dda371484926c4",
+                "reference": "af23c7bb26a73b850840823662dda371484926c4",
                 "shasum": ""
             },
             "require": {
@@ -7942,7 +7962,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.11-dev"
+                    "dev-master": "1.13-dev"
                 }
             },
             "autoload": {
@@ -7978,7 +7998,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2019-02-06T07:57:58+00:00"
+            "time": "2019-11-27T13:56:44+00:00"
         },
         {
             "name": "symfony/polyfill-php72",
@@ -9834,6 +9854,10 @@
                 {
                     "name": "See contributors",
                     "homepage": "https://www.drupal.org/node/3236/committers"
+                },
+                {
+                    "name": "pcambra",
+                    "homepage": "https://www.drupal.org/user/122101"
                 },
                 {
                     "name": "salvis",
