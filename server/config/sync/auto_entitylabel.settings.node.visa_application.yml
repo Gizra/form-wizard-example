@@ -1,5 +1,5 @@
 status: 1
-pattern: 'Application for [current-user:account-name]'
+pattern: 'Application for [node:author:account-name]'
 escape: false
 dependencies:
   config:
