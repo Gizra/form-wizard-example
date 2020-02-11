@@ -38,6 +38,22 @@ function server_visa_application_theme() {
 /**
  * Implements hook_form_FORM_ID_alter().
  *
+ * Specific form alters for Section 2.
+ *
+ * Set "Other" for the "Travel purpose" to appear only when checked.
+ */
+function server_visa_application_form_node_visa_application_section_2_form_alter(&$form, FormStateInterface $form_state) {
+  $form['field_travel_purpose_other']['#states'] = [
+    'visible' => [
+      ':input[name="field_travel_purpose"]' => ['value' => 'other'],
+    ],
+  ];
+}
+
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
  * Specific form alters for Section 3.
  *
  * Set "Confirmation" checkbox to required. We don't do this on the field
