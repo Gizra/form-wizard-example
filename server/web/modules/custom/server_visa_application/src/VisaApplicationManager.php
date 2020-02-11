@@ -208,7 +208,19 @@ class VisaApplicationManager implements VisaApplicationManagerInterface {
       $fields_status[$field_name] = !$is_empty;
     }
 
-    $main_status = $this->fieldsStatusToSectionStatus($fields_status, $application_node);
+    // Allow specific sections logic to be altered. This is used for example
+    // when we have an "Other" option, which shows a text area to fill the
+    // information. That text area should be required only if "Other" was
+    // selected.
+    $methodName = 'fieldStatusSection' . $section_number . 'Alter';
+    if (method_exists($this, $methodName)) {
+      $fields_status_to_pass = $this->{$methodName}($fields_status, $application_node);
+    }
+    else {
+      $fields_status_to_pass = $fields_status;
+    }
+
+    $main_status = $this->fieldsStatusToSectionStatus($fields_status_to_pass, $application_node);
 
     // Fuse the status of the main fields and the fields in sub-nodes.
     if ($main_status == self::SECTION_NOT_FILLED) {
@@ -231,6 +243,25 @@ class VisaApplicationManager implements VisaApplicationManagerInterface {
     }
 
     return $main_status;
+  }
+
+  /**
+   * Fields status for section 2 alter; Unset "Other" fields.
+   *
+   * @param array $fields_status
+   *   The fields status array.
+   * @param \Drupal\node\NodeInterface $application_node
+   *   The application node.
+   *
+   * @return array
+   *   The altered fields status array.
+   */
+  private function fieldStatusSection2Alter(array $fields_status, NodeInterface $application_node) {
+    if ($application_node->field_travel_purpose->value != 'other') {
+      unset($fields_status['field_travel_purpose_other']);
+    }
+
+    return $fields_status;
   }
 
   /**
