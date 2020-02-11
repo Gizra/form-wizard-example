@@ -40,6 +40,8 @@ hidden:
   field_destination_country: true
   field_first_name: true
   field_last_name: true
+  field_travel_purpose: true
+  field_travel_purpose_other: true
   field_user_picture: true
   path: true
   promote: true

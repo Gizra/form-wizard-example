@@ -16,7 +16,7 @@ entity_type: node
 bundle: visa_application
 label: 'Confirm info'
 description: 'By checking this, you confirm all information is correct.'
-required: true
+required: false
 translatable: false
 default_value:
   -
