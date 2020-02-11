@@ -15,8 +15,8 @@ settings:
       value: new
       label: New
     -
-      value: completed
-      label: Completed
+      value: locked
+      label: Locked
     -
       value: accepted
       label: Accepted

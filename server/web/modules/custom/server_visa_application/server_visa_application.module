@@ -409,7 +409,6 @@ function server_visa_application_entity_type_build(array &$entity_types) {
  * Preprocess details; Mark `faux required` as `required`.
  */
 function server_visa_application_preprocess_details(&$variables) {
-  template_preprocess_details($variables);
   server_visa_application_mark_faux_required_as_required($variables);
 }
 
@@ -417,25 +416,13 @@ function server_visa_application_preprocess_details(&$variables) {
  * Preprocess fieldset; Mark `faux required` as `required`.
  */
 function server_visa_application_preprocess_fieldset(&$variables) {
-  template_preprocess_fieldset($variables);
   server_visa_application_mark_faux_required_as_required($variables);
 }
-
-/**
- * Preprocess select; Mark `faux required` as `required`.
- */
-function server_visa_application_preprocess_select(&$variables) {
-  template_preprocess_select($variables);
-  server_visa_application_mark_faux_required_as_required($variables);
-}
-
-
 
 /**
  * Preprocess datetime; Mark `faux required` as `required`.
  */
 function server_visa_application_preprocess_datetime_wrapper(&$variables) {
-  template_preprocess_datetime_wrapper($variables);
   server_visa_application_mark_faux_required_as_required($variables);
 }
 
