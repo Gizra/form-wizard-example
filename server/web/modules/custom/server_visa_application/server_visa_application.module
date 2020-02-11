@@ -104,7 +104,7 @@ function server_visa_application_form_alter(&$form, FormStateInterface $form_sta
   // locked for editing by the applicant.
   $is_application_locked = $application_node->field_application_status->value != VisaApplicationManagerInterface::APPLICATION_NEW;
 
-  // If we're on the Waiver section, then we should be sure to have all other
+  // If we're on the Confirmation section, then we should be sure to have all other
   // sections completed.
   $is_confirmation_section_locked = $section_number == VisaApplicationManagerInterface::CONFIRMATION_SECTION_NUMBER
     && !$visa_application_manager->applicationCanBeSigned($application_node);
@@ -211,16 +211,6 @@ function server_visa_application_form_field_config_edit_form_alter(&$form, FormS
     '#description' => t('Mark as required for the Visa application wizard, so we know if a section is partially filled, or completed.'),
     '#default_value' => $field_config->getThirdPartySetting('server_visa_application', 'faux_required'),
   ];
-}
-
-/**
- * Adds faux required for address - country subfield.
- *
- * @todo: needed?
- */
-function server_visa_application_address_faux_required($element) {
-  $element['country_code']['#title'] .= '<span class="form-required" title="' . t('This field is required.') . '"></span>';
-  return $element;
 }
 
 /**
@@ -364,7 +354,7 @@ function server_visa_application_set_status_after_confirmation(NodeInterface $no
   // the application, then clear the Confirmation section fields.
   if ($node->original->field_application_status->value != VisaApplicationManagerInterface::APPLICATION_NEW
     && $node->field_application_status->value == VisaApplicationManagerInterface::APPLICATION_NEW) {
-    $node->field_application_confiramtion->value = NULL;
+    $node->field_application_confirmation->value = NULL;
   }
 
   // Lock Application if Confirmation was given.
