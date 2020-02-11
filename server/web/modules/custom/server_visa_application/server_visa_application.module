@@ -247,7 +247,7 @@ function server_visa_application_field_widget_form_alter(&$element, FormStateInt
   $element_copy = $element;
   $element_children = Element::children($element_copy);
 
-  // This is a more complex field (e.g. a fieldset of checkboxes).
+  // This is a more complex field (e.g. a fieldset or checkboxes).
   foreach ($element_children as $key) {
     $element[$key]['#label_attributes']['class'][] = 'form-required';
     $element[$key]['#faux_required'] = TRUE;
