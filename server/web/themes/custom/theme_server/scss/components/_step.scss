@@ -1,0 +1,66 @@
+.application-header {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+.application-profile {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(347px, 1fr));
+  grid-gap: 20px;
+
+  .profile-image img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+  }
+
+  .applicant-info {
+    .name {
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+  }
+}
+
+.application-status {
+  margin: 20px 0 30px;
+}
+
+.application-steps {
+  margin: 20px 0 30px;
+  background-color: $primary-xl;
+  padding: 20px 40px; ;
+
+  .application-steps-list {
+    .list-item {
+      margin: 1em 0 1.5em;
+      display: flex;
+
+      .icon {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-right: 10px;
+        margin-top: 5px;
+        i {
+          font-size: 1.2em;
+        }
+      }
+
+      .step-title {
+        font-weight: bold;
+        font-size: 1.3em;
+
+        a {
+          color: $primary-xd;
+          text-decoration: none;
+
+          &:hover, &:focus {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
