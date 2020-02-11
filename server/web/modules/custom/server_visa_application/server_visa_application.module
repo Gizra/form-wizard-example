@@ -216,6 +216,11 @@ function server_visa_application_field_widget_form_alter(&$element, FormStateInt
     return;
   }
 
+  if (empty($context['form']['#attributes']['class'][0]) || strpos($context['form']['#attributes']['class'][0], 'node-visa-application-section-1') !== 0) {
+    // Not in wizard context (most likely in node edit).
+    return;
+  }
+
   /** @var \Drupal\field\Entity\FieldConfig $field_definition */
   $field_definition = $context['items']->getFieldDefinition();
   if (!($field_definition instanceof FieldConfigInterface)) {
