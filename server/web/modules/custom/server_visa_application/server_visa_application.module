@@ -48,6 +48,8 @@ function server_visa_application_form_node_visa_application_section_2_form_alter
       ':input[name="field_travel_purpose"]' => ['value' => 'other'],
     ],
   ];
+
+  $form['field_travel_purpose_other']['#attributes']['class'][] = 'indent-form-element';
 }
 
 
