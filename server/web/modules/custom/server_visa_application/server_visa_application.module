@@ -272,7 +272,8 @@ function server_visa_application_element_info_alter(array &$types) {
 /**
  * Process callback for "Country code" elements on application form.
  *
- * - Set "Faux required" on the `country_code` element.
+ * As "country_code" element is its own form element, we need to make sure the
+ * logic of faux required has effect on it as-well.
  *
  * @see \Drupal\address\Element\Country::processCountry
  */
@@ -281,7 +282,11 @@ function server_visa_application_address_country_add_faux_required($element, For
     return $element;
   }
 
-  $element['country_code']['#faux_required'] = $element['#faux_required'];
+  if (!empty($element['#faux_required'])) {
+    $element['country_code']['#faux_required'] = TRUE;
+    $element['country_code']['#label_attributes']['class'][] = 'form-required';
+  }
+
   return $element;
 }
 
