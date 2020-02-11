@@ -262,11 +262,31 @@ function server_visa_application_element_info_alter(array &$types) {
   if (isset($types['radios'])) {
     $types['radios']['#process'][] = 'server_visa_application_remove_radio_na';
   }
+
+  if (isset($types['address_country'])) {
+    $types['address_country']['#process'][] = 'server_visa_application_address_country_add_faux_required';
+  }
 }
 
 
 /**
- * Process callback for elements on student application form.
+ * Process callback for "Country code" elements on application form.
+ *
+ * - Set "Faux required" on the `country_code` element.
+ *
+ * @see \Drupal\address\Element\Country::processCountry
+ */
+function server_visa_application_address_country_add_faux_required($element, FormStateInterface $form_state, $form) {
+  if (strpos($form['#form_id'], 'node_visa_application_section_') !== 0) {
+    return $element;
+  }
+
+  $element['country_code']['#faux_required'] = $element['#faux_required'];
+  return $element;
+}
+
+/**
+ * Process callback for "Radio" elements on application form.
  *
  * - Removes N/A option from boolean radios and select lists.
  * - Sets 'Yes' as first option for boolean radios.
