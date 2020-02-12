@@ -17,6 +17,7 @@
     "require": {
         "composer/installers": "^1.2",
         "drupal/address": "^1.7",
+        "drupal/auto_entitylabel": "^3.0@beta",
         "drupal/config_split": "^1.4",
         "drupal/core-composer-scaffold": "^8.8",
         "drupal/core-recommended": "^8.8",
