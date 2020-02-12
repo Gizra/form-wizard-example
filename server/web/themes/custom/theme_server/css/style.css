@@ -118,27 +118,28 @@ header {
         .application-steps .application-steps-list .list-item .step-title a:hover, .application-steps .application-steps-list .list-item .step-title a:focus {
           text-decoration: underline; }
 
-.section-status-wrapper {
+.application-status .section-status-wrapper {
   background-color: #DEF0FC;
   padding: 40px;
   font-size: 0.9em;
   font-weight: bold; }
-  .section-status-wrapper .section-status-indicator {
+  .application-status .section-status-wrapper .section-status-indicator {
     display: flex;
     margin-bottom: 1.5em; }
-    .section-status-wrapper .section-status-indicator i {
+    .application-status .section-status-wrapper .section-status-indicator i {
       margin-right: 10px;
       margin-top: 4px; }
-  .section-status-wrapper .application-navigation a {
+  .application-status .section-status-wrapper .application-navigation a {
     color: #2D2926;
     text-decoration: none; }
-    .section-status-wrapper .application-navigation a i {
+    .application-status .section-status-wrapper .application-navigation a i {
       margin-right: 5px; }
-
-.indent-form-element .form-item {
+.application-status .section-message {
+  background-color: #07AC93;
+  padding: 20px 40px; }
+.application-status .indent-form-element .form-item {
   margin-left: 20px; }
-
-.form-item label {
+.application-status .form-item label {
   font-weight: bold; }
 
 /*# sourceMappingURL=style.css.map */
