@@ -17,23 +17,74 @@ dependencies:
   module:
     - address
     - datetime
+    - field_group
     - image
     - options
     - user
+third_party_settings:
+  field_group:
+    group_section_1:
+      children:
+        - field_first_name
+        - field_last_name
+        - field_birthdate
+        - field_address
+        - field_user_picture
+      parent_name: ''
+      weight: 2
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: false
+      label: 'Section 1'
+    group_section_2:
+      children:
+        - field_destination_country
+        - field_travel_purpose
+        - field_travel_purpose_other
+      parent_name: ''
+      weight: 3
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: false
+      label: 'Section 2'
+    group_section_3:
+      children:
+        - field_application_confirmation
+      parent_name: ''
+      weight: 4
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: false
+      label: 'Section 3'
 id: node.visa_application.default
 targetEntityType: node
 bundle: visa_application
 mode: default
 content:
   field_address:
-    weight: 106
+    weight: 5
     label: above
     settings: {  }
     third_party_settings: {  }
     type: address_default
     region: content
   field_application_confirmation:
-    weight: 108
+    weight: 5
     label: above
     settings:
       format: default
@@ -43,14 +94,14 @@ content:
     type: boolean
     region: content
   field_application_status:
-    weight: 104
+    weight: 1
     label: above
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
   field_birthdate:
-    weight: 103
+    weight: 4
     label: above
     settings:
       format_type: medium
@@ -59,14 +110,14 @@ content:
     type: datetime_default
     region: content
   field_destination_country:
-    weight: 107
+    weight: 4
     label: above
     settings: {  }
     third_party_settings: {  }
     type: address_country_default
     region: content
   field_first_name:
-    weight: 101
+    weight: 2
     label: above
     settings:
       link_to_entity: false
@@ -74,7 +125,7 @@ content:
     type: string
     region: content
   field_last_name:
-    weight: 102
+    weight: 3
     label: above
     settings:
       link_to_entity: false
@@ -82,21 +133,21 @@ content:
     type: string
     region: content
   field_travel_purpose:
-    weight: 109
+    weight: 5
     label: above
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
   field_travel_purpose_other:
-    weight: 110
+    weight: 6
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
     region: content
   field_user_picture:
-    weight: 105
+    weight: 6
     label: above
     settings:
       image_style: ''
@@ -105,8 +156,8 @@ content:
     type: image
     region: content
   links:
-    weight: 100
+    weight: 0
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden: {  }
