@@ -163,8 +163,6 @@ fi
 
 
 # If we managed to get to here, the reset was a success.
-BASE_DOMAIN_URL="$(get_base_url)"
-LINK_INFO=$(fill_string_spaces "> Visit the site : ${BGLGREEN}$BASE_DOMAIN_URL${BGGREEN}" 89)
 echo
 echo -e  "${BGGREEN}                                                                 ${RESTORE}"
 echo -e "${BGLGREEN}  Reset complete!                                                ${RESTORE}"
