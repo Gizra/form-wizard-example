@@ -24,7 +24,6 @@ hooks:
   # - exec: composer global require dealerdirect/phpcodesniffer-composer-installer
   # Private files directory.
   - exec: mkdir /var/www/private
-  - exec: drush uli
 omit_containers: [dba, ddev-ssh-agent]
 use_dns_when_possible: true
 timezone: ""
