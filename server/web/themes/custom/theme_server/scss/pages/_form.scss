@@ -1,0 +1,43 @@
+.application-status {
+
+  .section-status-wrapper {
+    background-color: $primary-xl;
+    padding: 40px;
+    font-size: 0.9em;
+    font-weight: bold;
+
+    .section-status-indicator {
+      display: flex;
+      margin-bottom: 1.5em;
+
+      i {
+        margin-right: 10px;
+        margin-top: 4px;
+      }
+    }
+
+    .application-navigation {
+      a {
+        color: $black;
+        text-decoration: none;
+
+        i {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+
+  .section-message {
+    background-color: $secondary-d;
+    padding: 20px 40px;
+  }
+
+  .indent-form-element .form-item {
+    margin-left: 20px;
+  }
+
+  .form-item label {
+    font-weight: bold;
+  }
+}
