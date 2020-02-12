@@ -5,17 +5,23 @@ dependencies:
   config:
     - core.entity_form_mode.node.section_1
     - field.field.node.visa_application.field_address
+    - field.field.node.visa_application.field_application_confirmation
     - field.field.node.visa_application.field_application_status
     - field.field.node.visa_application.field_birthdate
+    - field.field.node.visa_application.field_destination_country
     - field.field.node.visa_application.field_first_name
     - field.field.node.visa_application.field_last_name
+    - field.field.node.visa_application.field_travel_purpose
+    - field.field.node.visa_application.field_travel_purpose_other
     - field.field.node.visa_application.field_user_picture
+    - image.style.thumbnail
     - node.type.visa_application
   module:
     - address
     - datetime
     - field_group
     - field_layout
+    - image
     - layout_discovery
 third_party_settings:
   field_layout:
@@ -71,6 +77,14 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
+  field_user_picture:
+    type: image_image
+    weight: 1
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
 hidden:
   created: true
   field_application_confirmation: true
@@ -78,7 +92,6 @@ hidden:
   field_destination_country: true
   field_travel_purpose: true
   field_travel_purpose_other: true
-  field_user_picture: true
   path: true
   promote: true
   status: true
