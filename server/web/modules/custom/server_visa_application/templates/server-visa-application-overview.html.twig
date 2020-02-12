@@ -1,24 +1,20 @@
-{#Macro to have Section status a <i> class#}
-{% macro get_section_status_as_class(status) %}
+{# Macro to have Section status a <i> class#}
+
+
+{% macro get_section_status_as_icon(status) %}
+  <div class="icon">
   {% if status == 0 %}
-    fa-square-o
+    <i class="fa fa-square-o" title="{{ 'Not filled' | t }}" }}></i>
   {% elseif status == 1 %}
-    fa-square
+    <i class="fa fa-square" title="{{ 'Partially filled' | t }}" }}></i>
   {% elseif status == 2 %}
-    fa-check-square-o
+    <i class="fa fa-check-square-o" title="{{ 'Completed' | t }}" }}></i>
   {% elseif status == 3 %}
-    fa-lock
+    <i class="fa fa-lock" title="{{ 'Locked' | t }}" }}></i>
   {% endif %}
+  </div>
 {% endmacro %}
 
-{#Macro to have Teacher evalaution status a <i> class#}
-{% macro get_teacher_evalaution_status_as_class(status) %}
-  {% if not status %}
-    fa-square-o
-  {% else %}
-    fa-check-square-o
-  {% endif %}
-{% endmacro %}
 
 <main class="container visa-application">
   <section class="application-header">
@@ -44,7 +40,10 @@
   <section class="application-status"><h2 class="title">{{ 'Important Information about Your Application' | t }}</h2>
     <div class="status-messages">
       <div class="general-info message">
-        <div class="icon"><i class="fa fa-pencil" aria-hidden="true"></i></div>
+        <div class="icon"><i class="fa fa-pencil" aria-hidden="true"></i>
+          Here we give some general information, so you get a sense of what you fill.
+          Setting expectations is always good.
+        </div>
       </div>
     </div>
   </section>
@@ -55,18 +54,20 @@
     <div class="application-steps-list">
 
       <div class="list-item">
-        <div class="icon"><i class="fa {{ _self.get_section_status_as_class(sections_status[1]) }}"></i></div>
+        {{ _self.get_section_status_as_icon(sections_status[1]) }}
         <div class="description">
           <div class="step-title">
             <a href="{{  path('server_visa_application.server_visa_application_form', {'section_number': 1}) }}">
               {{ 'Section 1: Personal information' | t }}
             </a>
           </div>
+          <div class="step-time"><i class="fa fa-clock-o" aria-hidden="true"></i> about 5 minutes</div>
+          <div class="step-help">Enter some personal information.</div>
         </div>
       </div>
 
       <div class="list-item">
-        <div class="icon"><i class="fa {{ _self.get_section_status_as_class(sections_status[2]) }}"></i></div>
+        {{ _self.get_section_status_as_icon(sections_status[2]) }}
         <div class="description">
           <div class="step-title">
             <a href="{{  path('server_visa_application.server_visa_application_form', {'section_number': 2}) }}">
@@ -79,7 +80,7 @@
       </div>
 
       <div class="list-item">
-        <div class="icon"><i class="fa {{ _self.get_section_status_as_class(sections_status[3]) }}"></i></div>
+        {{ _self.get_section_status_as_icon(sections_status[3]) }}
         <div class="description">
           <div class="step-title">
             <a href="{{  path('server_visa_application.server_visa_application_form', {'section_number': 3}) }}">
@@ -87,7 +88,7 @@
             </a>
           </div>
           <div class="step-help">
-            Sign the waiver to release your transcript information and submit your application. You need to do this section with a parent present.
+            Confirm information, and submit your application. You can do this only after all other sections are marked as "Completed".
           </div>
         </div>
       </div>
