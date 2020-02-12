@@ -1,0 +1,144 @@
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("../fonts/ProximaNovaT-Thin.ttf");
+  font-weight: 200; }
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("../fonts/ProximaNova-Light.ttf");
+  font-weight: 300; }
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("../fonts/ProximaNova-Regular.ttf");
+  font-weight: 400; }
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("../fonts/ProximaNova-Semibold.ttf");
+  font-weight: 600; }
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("../fonts/ProximaNova-Bold.ttf");
+  font-weight: 700; }
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("../fonts/ProximaNova-Extrabld.ttf");
+  font-weight: 800; }
+@font-face {
+  font-family: "Freight Display Pro";
+  src: url("../fonts/FreightDisplayProBook.otf");
+  font-weight: 400; }
+@font-face {
+  font-family: "Freight Display Pro";
+  src: url("../fonts/FreightDisplayProSemibold.otf");
+  font-weight: 600; }
+@font-face {
+  font-family: "Freight Display Pro";
+  src: url("../fonts/FreightDisplayProSemiboldItalic.otf");
+  font-weight: 600;
+  font-style: italic; }
+body {
+  font-family: 'Open Sans', sans-serif; }
+
+h1, h2, h3, h4 {
+  font-family: "Libre Franklin", sans-serif; }
+
+h1.page-title {
+  border-bottom: 1px solid #08294E; }
+
+.site-name,
+.step-title,
+.application-header {
+  font-family: "Libre Franklin", sans-serif; }
+
+.region-content,
+.region-header {
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 0 4%; }
+
+header {
+  padding: 30px 0;
+  background-color: #0F4C90;
+  color: #7E3E98; }
+  header .region-header .block-system-branding-block {
+    display: flex; }
+    header .region-header .block-system-branding-block a {
+      color: #FFFFFF;
+      text-decoration: none; }
+    header .region-header .block-system-branding-block .site-logo img {
+      width: 50px; }
+    header .region-header .block-system-branding-block .site-name {
+      font-size: 2em;
+      font-weight: bold;
+      margin-left: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; }
+
+.application-header {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 1em; }
+
+.application-profile {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(347px, 1fr));
+  grid-gap: 20px; }
+  .application-profile .profile-image img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%; }
+  .application-profile .applicant-info .name {
+    font-size: 1.2em;
+    font-weight: bold; }
+
+.application-status {
+  margin: 20px 0 30px; }
+
+.application-steps {
+  margin: 20px 0 30px;
+  background-color: #DEF0FC;
+  padding: 20px 40px; }
+  .application-steps .application-steps-list .list-item {
+    margin: 1em 0 1.5em;
+    display: flex; }
+    .application-steps .application-steps-list .list-item .icon {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      margin-right: 10px;
+      margin-top: 5px; }
+      .application-steps .application-steps-list .list-item .icon i {
+        font-size: 1.2em; }
+    .application-steps .application-steps-list .list-item .step-title {
+      font-weight: bold;
+      font-size: 1.3em; }
+      .application-steps .application-steps-list .list-item .step-title a {
+        color: #08294E;
+        text-decoration: none; }
+        .application-steps .application-steps-list .list-item .step-title a:hover, .application-steps .application-steps-list .list-item .step-title a:focus {
+          text-decoration: underline; }
+
+.section-status-wrapper {
+  background-color: #DEF0FC;
+  padding: 40px;
+  font-size: 0.9em;
+  font-weight: bold; }
+  .section-status-wrapper .section-status-indicator {
+    display: flex;
+    margin-bottom: 1.5em; }
+    .section-status-wrapper .section-status-indicator i {
+      margin-right: 10px;
+      margin-top: 4px; }
+  .section-status-wrapper .application-navigation a {
+    color: #2D2926;
+    text-decoration: none; }
+    .section-status-wrapper .application-navigation a i {
+      margin-right: 5px; }
+
+.field--name-field-travel-purpose-other .form-item {
+  margin-left: 20px; }
+
+.form-item label {
+  font-weight: bold; }
+
+/*# sourceMappingURL=style.css.map */

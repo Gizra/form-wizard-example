@@ -1,0 +1,25 @@
+header {
+  padding: 30px 0;
+  background-color: $primary-d;
+  color: $secondary-l;
+  .region-header .block-system-branding-block {
+    display: flex;
+
+    a {
+      color: $white;
+      text-decoration: none;
+    }
+    .site-logo img {
+      width: 50px;
+    }
+
+    .site-name {
+      font-size: 2em;
+      font-weight: bold;
+      margin-left: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+}

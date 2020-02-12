@@ -6,6 +6,11 @@ core: 8.x
 libraries:
   - theme_server/global-styling
   - theme_server/global-scripts
+  - theme_server/librefranklin
+  - theme_server/opensans
+  - theme_server/font-awesome
+
+logo: logo.png
 
 base theme: classy
 

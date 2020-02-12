@@ -9,7 +9,7 @@ services:
   server_visa_application.viewer:
     class: Drupal\server_visa_application\VisaApplicationViewer
     arguments: ['@entity.manager', '@module_handler']
-
-  server_visa_application.form_modes_manager:
-    class: Drupal\server_visa_application\FormModesManager
-    arguments: ['@entity_display.repository']
+  theme.negotiator.example:
+    class: Drupal\server_visa_application\Theme\ThemeNegotiator
+    tags:
+      - { name: theme_negotiator, priority: 0 }
