@@ -34,7 +34,6 @@ function load_config_file {
 function native_site_install {
   echo -e "${LBLUE}> Starting installation${RESTORE}"
   drush site-install server -y --db-url=mysql://"$MYSQL_USERNAME":"$MYSQL_PASSWORD"@"$MYSQL_HOSTNAME"/"$MYSQL_DB_NAME" --account-pass=admin --existing-config
-  drush en server_migrate -y
   drush migrate:import --all
   echo
 }

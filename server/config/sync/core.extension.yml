@@ -52,7 +52,6 @@ module:
   rdf: 0
   search: 0
   select2: 0
-  server_migrate: 0
   server_visa_application: 0
   shortcut: 0
   system: 0
