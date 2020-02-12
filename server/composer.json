@@ -21,6 +21,7 @@
         "drupal/config_split": "^1.4",
         "drupal/core-composer-scaffold": "^8.8",
         "drupal/core-recommended": "^8.8",
+        "drupal/devel": "^2.1",
         "drupal/field_group": "^3.0",
         "drush/drush": "^10.2"
     },
