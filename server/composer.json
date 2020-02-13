@@ -37,6 +37,7 @@
         "drupal/focal_point": "^1.0",
         "drupal/geolocation": "dev-2.x",
         "drupal/google_analytics": "^3.0",
+        "drupal/inline_entity_form": "^1.0@RC",
         "drupal/metatag": "^1.8",
         "drupal/migrate_file": "^1.1",
         "drupal/migrate_plus": "^4.1",

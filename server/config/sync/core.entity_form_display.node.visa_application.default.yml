@@ -24,6 +24,7 @@ dependencies:
     - image
     - layout_discovery
     - path
+    - server_visa_application
 third_party_settings:
   field_layout:
     id: layout_onecol
@@ -52,6 +53,7 @@ third_party_settings:
         - field_destination_country
         - field_travel_purpose
         - field_travel_purpose_other
+        - field_companions
       parent_name: ''
       weight: 2
       format_type: details
@@ -117,10 +119,17 @@ content:
     weight: 130
     settings:
       match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      form_mode: default
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      collapsible: false
+      collapsed: false
+      allow_new: true
+      allow_existing: false
+      allow_duplicate: false
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: visa_application_entity_form_complex
     region: content
   field_destination_country:
     weight: 127

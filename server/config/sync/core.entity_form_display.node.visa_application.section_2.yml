@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.visa_application.field_application_confirmation
     - field.field.node.visa_application.field_application_status
     - field.field.node.visa_application.field_birthdate
+    - field.field.node.visa_application.field_companions
     - field.field.node.visa_application.field_destination_country
     - field.field.node.visa_application.field_first_name
     - field.field.node.visa_application.field_last_name
@@ -19,6 +20,7 @@ dependencies:
     - address
     - field_layout
     - layout_discovery
+    - server_visa_application
 third_party_settings:
   field_layout:
     id: layout_onecol
@@ -28,6 +30,22 @@ targetEntityType: node
 bundle: visa_application
 mode: section_2
 content:
+  field_companions:
+    type: visa_application_entity_form_complex
+    weight: 3
+    region: content
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: '1'
+      match_operator: CONTAINS
+      override_labels: 0
+      collapsible: 0
+      collapsed: 0
+      allow_existing: 0
+      allow_duplicate: 0
+    third_party_settings: {  }
   field_destination_country:
     type: address_country_default
     weight: 0
