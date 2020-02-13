@@ -66,9 +66,9 @@ class VisaApplicationInlineEntityFormComplex extends InlineEntityFormComplex {
     $helper_text = '';
     $type_label = '';
     $add_label = $this->t('Add');
-    if ($field_name == 'field_companion') {
+    if ($field_name == 'field_companions') {
       $type_label = $this->t('Companion');
-      $helper_text = '<p>' . $this->t('Please Enter up to 3 companions that will join you. You must enter at-least one. It might not make sense on a real Visa application, but for demonstration purposes it is great.') . '</p>';
+      $helper_text = '<p>' . $this->t('Please Enter companions that will join you. You must enter at-least one. It might not make sense on a real Visa application, but for demonstration purposes it is great.') . '</p>';
       $helper_text .= '<div class="inline-helper">';
       $helper_text .= '<i class="fa fa-exclamation-circle" aria-hidden="true"></i>';
       $helper_text .= '<div class="inline-helper-text">' . $this->t('Your entries will not be saved until you click Save below.') . '</div>';
@@ -94,6 +94,7 @@ class VisaApplicationInlineEntityFormComplex extends InlineEntityFormComplex {
     if (isset($element['form'])) {
       $element['form']['#title'] = $type_label;
     }
+
     return $element;
   }
 

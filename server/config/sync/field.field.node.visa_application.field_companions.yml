@@ -16,7 +16,7 @@ field_name: field_companions
 entity_type: node
 bundle: visa_application
 label: Companions
-description: 'Enter companions that will join you. You must enter at-least one. It might not make sense on a real Visa application, but for demonstration purposes it''s great.'
+description: ''
 required: false
 translatable: false
 default_value: {  }
