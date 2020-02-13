@@ -50,11 +50,6 @@ class VisaApplicationInlineEntityFormComplex extends InlineEntityFormComplex {
       $save_label = $type_label ? t('Update @type', ['@type' => $type_label]) : t('Update');
     }
 
-    // Overriding label for teachers, because saving sends them a request.
-    if ($element['#bundle'] == 'teacher') {
-      $save_label = t('Send request');
-    }
-
     $element['actions']['ief_' . $element['#op'] . '_save']['#value'] = $save_label;
 
     return $element;
