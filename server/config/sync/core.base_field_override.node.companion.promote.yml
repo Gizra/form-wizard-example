@@ -1,0 +1,22 @@
+uuid: e0031f83-cc75-404b-ac6e-d649cd75fd24
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.companion
+id: node.companion.promote
+field_name: promote
+entity_type: node
+bundle: companion
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,23 @@
+uuid: 8353a8a2-3d38-4f4d-ada1-5329aa2c9701
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_companion_relation
+    - node.type.companion
+  module:
+    - options
+id: node.companion.field_companion_relation
+field_name: field_companion_relation
+entity_type: node
+bundle: companion
+label: Relation
+description: 'How is the companion related to you.'
+required: true
+translatable: false
+default_value:
+  -
+    value: friend
+default_value_callback: ''
+settings: {  }
+field_type: list_string

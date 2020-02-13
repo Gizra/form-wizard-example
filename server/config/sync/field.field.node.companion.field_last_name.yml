@@ -1,0 +1,19 @@
+uuid: fb3f6881-4250-46ce-ab35-4e96f8d1dd4b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_last_name
+    - node.type.companion
+id: node.companion.field_last_name
+field_name: field_last_name
+entity_type: node
+bundle: companion
+label: 'Last name'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
