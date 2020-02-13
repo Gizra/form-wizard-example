@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_form_mode.node.companion
     - core.entity_form_mode.node.section_2
     - field.field.node.visa_application.field_address
     - field.field.node.visa_application.field_application_confirmation
@@ -35,7 +36,7 @@ content:
     weight: 3
     region: content
     settings:
-      form_mode: default
+      form_mode: companion
       label_singular: ''
       label_plural: ''
       allow_new: '1'
