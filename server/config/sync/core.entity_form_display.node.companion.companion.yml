@@ -1,0 +1,52 @@
+uuid: 67021eda-7d1e-48bb-9146-a9a5e6a13712
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.node.companion
+    - field.field.node.companion.field_companion_relation
+    - field.field.node.companion.field_first_name
+    - field.field.node.companion.field_last_name
+    - node.type.companion
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: node.companion.companion
+targetEntityType: node
+bundle: companion
+mode: companion
+content:
+  field_companion_relation:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_first_name:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_last_name:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  title: true
+  uid: true

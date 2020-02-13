@@ -1,0 +1,10 @@
+uuid: 23f1c8fd-f434-4fee-8aca-daa2a351cbfb
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.companion
+label: Companion
+targetEntityType: node
+cache: true

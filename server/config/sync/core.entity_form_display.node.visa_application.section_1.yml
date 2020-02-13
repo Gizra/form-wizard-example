@@ -89,6 +89,7 @@ hidden:
   created: true
   field_application_confirmation: true
   field_application_status: true
+  field_companions: true
   field_destination_country: true
   field_travel_purpose: true
   field_travel_purpose_other: true

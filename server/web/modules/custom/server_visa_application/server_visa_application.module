@@ -186,6 +186,19 @@ function server_visa_application_hide_status_message($form, FormStateInterface $
   $messenger->addMessage(t('Section saved.'));
 }
 
+/**
+ * Implements hook_inline_entity_form_table_fields_alter().
+ *
+ * Remove `Status` from Inline entity form table.
+ */
+function server_visa_application_inline_entity_form_table_fields_alter(&$fields, $context) {
+  if ($context['parent_bundle'] != 'visa_application') {
+    return;
+  }
+
+  unset($fields['status']);
+}
+
 
 /**
  * Implements hook_form_FORM_ID_alter().
@@ -267,6 +280,25 @@ function server_visa_application_element_info_alter(array &$types) {
     $types['address_country']['#process'][] = 'server_visa_application_address_country_add_faux_required';
   }
 }
+
+/**
+ * Implements hook_entity_type_alter().
+ *
+ * Use our own Inline entity form handler.
+ *
+ * @see inline_entity_form_entity_type_build()
+ */
+function server_visa_application_entity_type_alter(array &$entity_types)
+{
+  if (isset($entity_types['node'])) {
+    /** @var \Drupal\Core\Entity\EntityTypeInterface[] $entity_types */
+    $entity_types['node']->setHandlerClass(
+      'inline_form',
+      '\Drupal\server_visa_application\Form\VisaApplicationNodeInlineForm'
+    );
+  }
+}
+
 
 
 /**

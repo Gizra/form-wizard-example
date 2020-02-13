@@ -1,0 +1,23 @@
+uuid: e7f6c39b-5a7e-429e-906b-632868881e7b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.companion
+  module:
+    - user
+id: node.companion.teaser
+targetEntityType: node
+bundle: companion
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_companion_relation: true
+  field_first_name: true
+  field_last_name: true

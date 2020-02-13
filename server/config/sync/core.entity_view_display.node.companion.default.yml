@@ -1,0 +1,46 @@
+uuid: 677f5c4a-b9ba-47d3-8631-13a9aa26c8d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.companion.field_companion_relation
+    - field.field.node.companion.field_first_name
+    - field.field.node.companion.field_last_name
+    - node.type.companion
+  module:
+    - options
+    - user
+id: node.companion.default
+targetEntityType: node
+bundle: companion
+mode: default
+content:
+  field_companion_relation:
+    weight: 103
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_first_name:
+    weight: 101
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_last_name:
+    weight: 102
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

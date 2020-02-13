@@ -22,6 +22,7 @@ hidden:
   field_application_confirmation: true
   field_application_status: true
   field_birthdate: true
+  field_companions: true
   field_destination_country: true
   field_first_name: true
   field_last_name: true
