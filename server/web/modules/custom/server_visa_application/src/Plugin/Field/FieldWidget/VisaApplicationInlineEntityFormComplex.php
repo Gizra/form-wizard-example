@@ -41,7 +41,7 @@ class VisaApplicationInlineEntityFormComplex extends InlineEntityFormComplex {
 
     // Build a delta suffix that's appended to button #name keys for uniqueness.
     if ($element['#op'] == 'add') {
-      $save_label = $type_label ? t('Save @type', ['@type' => $type_label]) : $element['#bundle']; //t('Save');
+      $save_label = $type_label ? t('Save @type', ['@type' => $type_label]) : $element['#bundle'];
     }
     elseif ($element['#op'] == 'duplicate') {
       $save_label = t('Duplicate @type_singular', ['@type_singular' => $element['#ief_labels']['singular']]);

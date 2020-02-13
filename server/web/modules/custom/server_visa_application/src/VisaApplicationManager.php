@@ -310,10 +310,16 @@ class VisaApplicationManager implements VisaApplicationManagerInterface {
     }
 
     $fields_status = [];
+    /** @var \Drupal\Core\Entity\EntityInterface $entity */
     foreach ($application_node->get($field_name)->referencedEntities() as $entity) {
       foreach ($this->getFauxRequiredFieldsToValidate($entity, 'default') as $field_name) {
         $fields_status[$field_name] = !$entity->{$field_name}->isEmpty();
       }
+    }
+
+    if (empty($fields_status)) {
+      // There were no faux required fields, so it means everything is filled.
+      return self::SECTION_COMPLETE;
     }
 
     return $this->fieldsStatusToSectionStatus($fields_status);
