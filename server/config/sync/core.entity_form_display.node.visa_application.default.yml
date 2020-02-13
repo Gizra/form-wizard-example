@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.visa_application.field_application_confirmation
     - field.field.node.visa_application.field_application_status
     - field.field.node.visa_application.field_birthdate
+    - field.field.node.visa_application.field_companions
     - field.field.node.visa_application.field_destination_country
     - field.field.node.visa_application.field_first_name
     - field.field.node.visa_application.field_last_name
@@ -111,6 +112,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
+    region: content
+  field_companions:
+    weight: 130
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
     region: content
   field_destination_country:
     weight: 127

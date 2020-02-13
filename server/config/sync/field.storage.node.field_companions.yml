@@ -1,0 +1,19 @@
+uuid: 80dd32aa-816b-44c0-a5c3-6d0ed1d053b8
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_companions
+field_name: field_companions
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 3
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

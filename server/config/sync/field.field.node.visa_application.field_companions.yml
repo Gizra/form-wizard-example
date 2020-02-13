@@ -1,0 +1,34 @@
+uuid: dc0c044e-0ebf-410d-b0f2-2d4ee983cc13
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_companions
+    - node.type.companion
+    - node.type.visa_application
+  module:
+    - server_visa_application
+third_party_settings:
+  server_visa_application:
+    faux_required: 1
+id: node.visa_application.field_companions
+field_name: field_companions
+entity_type: node
+bundle: visa_application
+label: Companions
+description: 'Enter up to 3 companions that will join you. You must enter at-least one. It might not make sense on a real Visa application, but for demonstration purposes it''s great.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      companion: companion
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
