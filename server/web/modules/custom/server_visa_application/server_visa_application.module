@@ -281,6 +281,25 @@ function server_visa_application_element_info_alter(array &$types) {
   }
 }
 
+/**
+ * Implements hook_entity_type_alter().
+ *
+ * Use our own Inline entity form handler.
+ *
+ * @see inline_entity_form_entity_type_build()
+ */
+function server_visa_application_entity_type_alter(array &$entity_types)
+{
+  if (isset($entity_types['node'])) {
+    /** @var \Drupal\Core\Entity\EntityTypeInterface[] $entity_types */
+    $entity_types['node']->setHandlerClass(
+      'inline_form',
+      '\Drupal\server_visa_application\Form\VisaApplicationNodeInlineForm'
+    );
+  }
+}
+
+
 
 /**
  * Process callback for "Country code" elements on application form.
