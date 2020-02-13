@@ -358,7 +358,12 @@ function server_visa_application_remove_radio_na($element, FormStateInterface $f
 function server_visa_application_node_access(NodeInterface $node, $op, AccountInterface $account) {
   $neutral = AccessResult::neutral();
 
-  if ($node->bundle() != 'visa_application') {
+  $bundles = [
+    'companion',
+    'visa_application',
+  ];
+
+  if (!in_array($node->bundle(), $bundles)) {
     // Not a node related to a Visa application.
     return $neutral;
   }
