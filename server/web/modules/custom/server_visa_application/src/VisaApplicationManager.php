@@ -330,24 +330,8 @@ class VisaApplicationManager implements VisaApplicationManagerInterface {
    */
   public function getApplicationFromNode(NodeInterface $node) {
     switch ($node->bundle()) {
-      case 'experience':
-        $field_name = 'field_experiences';
-        break;
-
-      case 'honor_award':
-        $field_name = 'field_honors_awards';
-        break;
-
-      case 'household_member':
-        $field_name = 'field_household_members';
-        break;
-
-      case 'parent':
-        $field_name = 'field_parent';
-        break;
-
-      case 'teacher':
-        $field_name = 'field_teacher';
+      case 'companion':
+        $field_name = 'field_companions';
         break;
 
       default:
