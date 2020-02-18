@@ -311,7 +311,7 @@ function server_visa_application_remove_radio_na($element, FormStateInterface $f
 /**
  * Implements hook_node_access().
  *
- * Allow editing Teacher evaluation node based on unique access token.
+ * Prevent direct access to node view/edit/delete for non-admin users.
  */
 function server_visa_application_node_access(NodeInterface $node, $op, AccountInterface $account) {
   $neutral = AccessResult::neutral();
