@@ -227,48 +227,6 @@ function server_visa_application_form_field_config_edit_form_alter(&$form, FormS
 }
 
 /**
- * Implements hook_field_widget_form_alter().
- *
- * Mark faux required fields with `form-required` class.
- */
-function server_visa_application_field_widget_form_alter(&$element, FormStateInterface &$form_state, $context) {
-  if (!empty($element['#required'])) {
-    // Element is already marked as required.
-    return;
-  }
-
-  if (empty($context['form']['#attributes']['class'][0]) || strpos($context['form']['#attributes']['class'][0], 'node-visa-application-section-') !== 0) {
-    // Not in wizard context (most likely in node edit).
-    return;
-  }
-
-  /** @var \Drupal\field\Entity\FieldConfig $field_definition */
-  $field_definition = $context['items']->getFieldDefinition();
-  if (!($field_definition instanceof FieldConfigInterface)) {
-    // Not a configurable field.
-    return;
-  }
-  if (!$field_definition->getThirdPartySetting('server_visa_application', 'faux_required', FALSE)) {
-    // Faux required is not enabled.
-    return;
-  }
-
-  $element['#label_attributes']['class'][] = 'form-required';
-  // Pass along to preprocess functions the info.
-  $element['#faux_required'] = TRUE;
-
-  $element_copy = $element;
-  $element_children = Element::children($element_copy);
-
-  // This is a more complex field (e.g. a fieldset or checkboxes).
-  foreach ($element_children as $key) {
-    $element[$key]['#label_attributes']['class'][] = 'form-required';
-    $element[$key]['#faux_required'] = TRUE;
-  }
-
-}
-
-/**
  * Implements hook_element_info_alter().
  */
 function server_visa_application_element_info_alter(array &$types) {
@@ -466,6 +424,47 @@ function server_visa_application_entity_type_build(array &$entity_types) {
 /**********************************
  * Theme
  **********************************/
+
+/**
+ * Implements hook_field_widget_form_alter().
+ *
+ * Mark faux required fields with `form-required` class.
+ */
+function server_visa_application_field_widget_form_alter(&$element, FormStateInterface &$form_state, $context) {
+  if (!empty($element['#required'])) {
+    // Element is already marked as required.
+    return;
+  }
+
+  if (empty($context['form']['#attributes']['class'][0]) || strpos($context['form']['#attributes']['class'][0], 'node-visa-application-section-') !== 0) {
+    // Not in wizard context (most likely in node edit).
+    return;
+  }
+
+  /** @var \Drupal\field\Entity\FieldConfig $field_definition */
+  $field_definition = $context['items']->getFieldDefinition();
+  if (!($field_definition instanceof FieldConfigInterface)) {
+    // Not a configurable field.
+    return;
+  }
+  if (!$field_definition->getThirdPartySetting('server_visa_application', 'faux_required', FALSE)) {
+    // Faux required is not enabled.
+    return;
+  }
+
+  $element['#label_attributes']['class'][] = 'form-required';
+  // Pass along to preprocess functions the info.
+  $element['#faux_required'] = TRUE;
+
+  $element_copy = $element;
+  $element_children = Element::children($element_copy);
+
+  // This is a more complex field (e.g. a fieldset or checkboxes).
+  foreach ($element_children as $key) {
+    $element[$key]['#label_attributes']['class'][] = 'form-required';
+    $element[$key]['#faux_required'] = TRUE;
+  }
+}
 
 /**
  * Preprocess details; Mark `faux required` as `required`.
