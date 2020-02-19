@@ -31,3 +31,5 @@ pantheon_config.sh
 
 #SASS
 .sass-cache
+.editorconfig
+.gitattributes

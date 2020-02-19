@@ -28,8 +28,8 @@ hooks:
   - exec: echo "\$settings['config_sync_directory'] = '../config/sync';" >> /var/www/html/web/sites/default/settings.ddev.php
   - exec: echo "\$settings['file_private_path'] = '/var/www/private';" >> /var/www/html/web/sites/default/settings.ddev.php
 
-  # Install file.
-  - exec: drush site-install server -y --db-url=mysql://db:db@db/db --account-pass=admin
+  # Install "server" profile
+  - exec: drush site-install -y server --db-url=mysql://db:db@db/db --account-pass=admin
       --existing-config
   - exec: drush cr
 
