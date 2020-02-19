@@ -2,6 +2,15 @@
 
 ## Requirements
 
+* [DDEV](https://ddev.readthedocs.io/en/stable/)
+
+## Installation
+
+    ddev composer install
+    ddev restart
+
+Notice that in the end of the `ddev restart` we get a one time admin link to login.
+
 ## Configuration management
 
 Import configuration from code:
