@@ -309,6 +309,22 @@ function server_visa_application_node_access(NodeInterface $node, $op, AccountIn
   $admin_access = $account->hasPermission('administer nodes') ? AccessResult::allowed() : AccessResult::forbidden();
 
   if ($op == 'view') {
+
+    // For displaying (downloading) private files attached to 'Visa application'
+    // content, accessing user must have 'view' permission for content itself.
+    if ($node->getOwner()->id() == $account->id()) {
+      $current_route = \Drupal::routeMatch()->getRouteName();
+      $allowed_routes = [
+        'image.style_private',
+        'system.files',
+      ];
+
+      if (in_array($current_route, $allowed_routes)) {
+        return $neutral;
+      }
+    }
+
+
     return $admin_access;
   }
 
