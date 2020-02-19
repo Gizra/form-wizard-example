@@ -1,3 +1,10 @@
+.application-profile {
+  .applicant-logout a {
+    font-size: 0.8em;
+    color: $primary-xd;
+  }
+}
+
 .application-status {
 
   .section-status-wrapper {
@@ -37,7 +44,26 @@
     margin-left: 20px;
   }
 
-  .form-item label {
-    font-weight: bold;
+  .form-item {
+    label,
+    legend .fieldset-legend {
+      font-weight: bold;
+    }
+
+    .form-radios label {
+      font-weight: normal;
+    }
+
+    .inline-helper {
+      display: flex;
+      margin-bottom: 10px;
+
+      i {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-right: 5px;
+      }
+    }
   }
 }

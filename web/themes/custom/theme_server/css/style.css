@@ -155,6 +155,11 @@ main.visa-application-section select:disabled {
   color: grey;
 }
 
+.application-profile .applicant-logout a {
+  font-size: 0.8em;
+  color: #08294E;
+}
+
 .application-status .section-status-wrapper {
   background-color: #DEF0FC;
   padding: 40px;
@@ -183,8 +188,22 @@ main.visa-application-section select:disabled {
 .application-status .indent-form-element .form-item {
   margin-left: 20px;
 }
-.application-status .form-item label {
+.application-status .form-item label,
+.application-status .form-item legend .fieldset-legend {
   font-weight: bold;
+}
+.application-status .form-item .form-radios label {
+  font-weight: normal;
+}
+.application-status .form-item .inline-helper {
+  display: flex;
+  margin-bottom: 10px;
+}
+.application-status .form-item .inline-helper i {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 5px;
 }
 
 /*# sourceMappingURL=style.css.map */
