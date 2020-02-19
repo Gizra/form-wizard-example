@@ -18,14 +18,17 @@
         "composer/installers": "^1.2",
         "drupal/address": "^1.7",
         "drupal/auto_entitylabel": "^3.0@beta",
+        "drupal/config_ignore": "^2.2",
         "drupal/config_split": "^1.4",
         "drupal/core-composer-scaffold": "^8.8",
         "drupal/core-recommended": "^8.8",
         "drupal/devel": "^2.1",
         "drupal/environment_indicator": "^3.7",
         "drupal/field_group": "^3.0",
+        "drupal/inline_entity_form": "^1.0@RC",
         "drupal/select2": "^1.6",
         "drupal/thunder_admin": "^3.1",
+        "drupal/token": "^1.6",
         "drush/drush": "^10.2"
     },
     "require-dev": {
