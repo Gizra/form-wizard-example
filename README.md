@@ -14,9 +14,11 @@ Notice that in the end of the `ddev restart` we get a one time admin link to log
 ## Configuration management
 
 Import configuration from code:
+
     ddev exec drush cim
 
 Export active configuration into code:
+
     ddev exec drush cex
 
 ## Theme development
