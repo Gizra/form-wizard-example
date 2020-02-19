@@ -26,7 +26,8 @@ dependencies:
 third_party_settings:
   field_layout:
     id: layout_onecol
-    settings: {  }
+    settings:
+      label: ''
   field_group:
     group_personal_info:
       children:

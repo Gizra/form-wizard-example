@@ -20,7 +20,8 @@ third_party_settings:
     sections:
       -
         layout_id: layout_onecol
-        layout_settings: {  }
+        layout_settings:
+          label: ''
         components:
           e89e3ac5-deea-4cab-809d-0b21c9a0806b:
             uuid: e89e3ac5-deea-4cab-809d-0b21c9a0806b
