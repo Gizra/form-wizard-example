@@ -7,9 +7,10 @@
         <div class="icon"><i class="fa fa-pencil" aria-hidden="true"></i>
           {{ 'Here we give some general information, so you get a sense of what you fill. Setting expectations is always good.' | t }}
           <p>
-          {{ 'When you will <a href="@url">login</a>, you will be able to create, edit and review your application.' | t(
+          {{ 'When you will <a href="@login-url">login</a> or <a href="@register-url">register</a>, you will be able to create, edit and review your application.' | t(
             {
-            '@url': path('user.login', {'destination': path('server_visa_application.server_visa_application_overview')})
+            '@login-url': path('user.login', {'destination': path('server_visa_application.server_visa_application_overview')}),
+            '@register-url': path('user.register', {'destination': path('server_visa_application.server_visa_application_overview')})
             }
           ) }}
           </p>
