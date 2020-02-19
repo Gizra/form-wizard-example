@@ -29,6 +29,9 @@ function server_visa_application_theme() {
         'current_year' => NULL,
       ],
     ],
+    'server_visa_application_overview_anonymous' => [
+      'variables' => [],
+    ],
     'node_visa_application_section_form' => [
       'render element' => 'form',
     ],

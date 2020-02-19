@@ -6,7 +6,6 @@ server_visa_application.server_visa_application_overview:
   requirements:
     _permission: 'access content'
     _custom_access: '\Drupal\server_visa_application\Controller\VisaApplicationForm::applicationFormAccess'
-    _role: 'authenticated'
 server_visa_application.server_visa_application_form:
   path: '/visa-application/{section_number}'
   defaults:

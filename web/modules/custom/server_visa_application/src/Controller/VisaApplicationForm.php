@@ -122,6 +122,10 @@ class VisaApplicationForm extends ControllerBase {
    *   Renderable array.
    */
   public function overview() {
+    if ($this->account->isAnonymous()) {
+      return $this->visaApplicationViewer->overviewAnon();
+    }
+
     $visa_application_node = $this->visaApplicationManager->getApplicationNodeByUser($this->account);
     $sections_status = $this->visaApplicationManager->getSectionsStatus($visa_application_node);
 
@@ -141,6 +145,10 @@ class VisaApplicationForm extends ControllerBase {
    *   The access result.
    */
   public function applicationFormAccess(AccountInterface $account) {
+    if ($account->isAnonymous()) {
+      return AccessResult::allowed();
+    }
+
     try {
       $this->visaApplicationManager->getApplicationNodeByUser($account);
       return AccessResult::allowed();

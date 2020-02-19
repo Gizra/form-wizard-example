@@ -18,9 +18,7 @@
 
 <main class="container visa-application">
   <section class="application-header">
-    {% trans %}
-      Visa Application
-    {% endtrans %}
+    {{ 'Visa Application' | t }}
   </section>
 
   <section class="application-profile">
@@ -41,8 +39,7 @@
     <div class="status-messages">
       <div class="general-info message">
         <div class="icon"><i class="fa fa-pencil" aria-hidden="true"></i>
-          Here we give some general information, so you get a sense of what you fill.
-          Setting expectations is always good.
+          {{ 'Here we give some general information, so you get a sense of what you fill. Setting expectations is always good.' | t }}
         </div>
       </div>
     </div>

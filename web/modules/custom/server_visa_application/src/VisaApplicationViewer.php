@@ -72,4 +72,15 @@ class VisaApplicationViewer implements VisaApplicationViewerInterface {
     return $build;
   }
 
+  /**
+   * @inheritDoc
+   */
+  public function overviewAnon() {
+    $build = [
+      '#theme' => 'server_visa_application_overview_anonymous',
+    ];
+
+    return $build;
+
+  }
 }

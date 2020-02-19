@@ -22,4 +22,9 @@ interface VisaApplicationViewerInterface {
    */
   public function overview(NodeInterface $application_node, array $sections_status);
 
+  /**
+   * Renders a info page for anonymous users.
+   */
+  public function overviewAnon();
+
 }
