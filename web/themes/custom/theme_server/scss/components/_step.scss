@@ -63,9 +63,13 @@
       }
     }
   }
+}
 
-  button[disabled] {
+main.visa-application-section {
+
+  button[disabled],
+  input[disabled],
+  select:disabled {
     color: grey;
   }
-
 }

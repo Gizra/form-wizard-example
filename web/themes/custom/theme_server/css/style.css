@@ -148,7 +148,10 @@ header .region-header .block-system-branding-block .site-name {
 .application-steps .application-steps-list .list-item .step-title a:hover, .application-steps .application-steps-list .list-item .step-title a:focus {
   text-decoration: underline;
 }
-.application-steps button[disabled] {
+
+main.visa-application-section button[disabled],
+main.visa-application-section input[disabled],
+main.visa-application-section select:disabled {
   color: grey;
 }
 
