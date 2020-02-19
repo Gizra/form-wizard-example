@@ -205,5 +205,8 @@ main.visa-application-section select:disabled {
   justify-content: center;
   margin-right: 5px;
 }
+.application-status .ief-entity-operations {
+  margin-left: 50px;
+}
 
 /*# sourceMappingURL=style.css.map */
