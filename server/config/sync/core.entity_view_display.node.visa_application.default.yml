@@ -32,7 +32,7 @@ third_party_settings:
         - field_address
         - field_user_picture
       parent_name: ''
-      weight: 2
+      weight: 1
       format_type: details
       region: content
       format_settings:
@@ -47,8 +47,9 @@ third_party_settings:
         - field_destination_country
         - field_travel_purpose
         - field_travel_purpose_other
+        - field_companions
       parent_name: ''
-      weight: 3
+      weight: 2
       format_type: details
       region: content
       format_settings:
@@ -62,7 +63,7 @@ third_party_settings:
       children:
         - field_application_confirmation
       parent_name: ''
-      weight: 4
+      weight: 3
       format_type: details
       region: content
       format_settings:
@@ -95,7 +96,7 @@ content:
     type: boolean
     region: content
   field_application_status:
-    weight: 1
+    weight: 5
     label: above
     settings: {  }
     third_party_settings: {  }
