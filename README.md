@@ -1,33 +1,86 @@
-# Drupal Elm Starter
+# Drupal Elm Starter - Server project
 
-[![Build Status](https://travis-ci.org/Gizra/drupal-elm-starter.svg?branch=master)](https://travis-ci.org/Gizra/drupal-elm-starter)
+## Requirements
 
-Drupal Elm Starter is a starter kit for setting up sites using Drupal as a backend and [Elm](http://elm-lang.org/) in the frontend.
+## Drupal Site installation (DDEV)
 
-For the backend, check the [server README.md](https://github.com/Gizra/drupal-elm-starter/blob/master/server/README.md)
+ * Preferred, supported.
 
-For the frontend, check the [client README.md](https://github.com/Gizra/drupal-elm-starter/blob/master/client/README.md)
+```bash
+./install
+```
 
-## Pusher
-When the item will be updated (E.g. via the backend on 
-[/node/1/edit](http://localhost/drupal-elm-starter/server/www/node/1/edit)), 
-it will fire Pusher messages that will update the Elm application in real time.
+## Alternative install path (non-DDEV)
 
-Editing an item produces pusher messages on two different channels: `general` 
-and `private-general`. The private channel is only accessible by users with 
-`access private fields` permission, and currently exposes the item's "Private 
-note" field, which normal users can't access. 
+The project has an alternative way to install the project, using the native OS. This is preferred if Docker has poor
+performance (OSX - virtual machine issues). Also it can be used if the performance is really critical for a certain
+task, to avoid the overhead of the containerization.
 
-Log in to the Elm app for example with `admin` / `admin` to see also the item
-private note field (on [/#/item/1](http://localhost:3000/#/item/1) for 
-example), and get notifications through the private channel.
-Log in with a normal user (For exmaple `alice` / `alice`), to get notifications
-through the public pusher channel.
- 
-## Credits
+ * Copy `default.config.sh` to `config.sh`
+ * Review the content of `config.sh`
+ * Execute:
+   ```bash
+    ./native-install
+   ```
 
-[Gizra](https://gizra.com)
+Known issues / cons compared to DDEV:
+ - Drush version needs to be at least version 9, no check is made for that.
+ - The hostname must be configured properly manually to resolve to 127.0.0.1 .
+ - The webserver must be configured properly manually to serve the `web/` directory.
+ - You must re-configure WDIO in order to be able to reach your local site, out of the box it tries to connect to DDEV.
+   See `/wdio/wdio.local.example.conf.js` for help.
 
-## License
+## Configuration management
 
-MIT
+Import configuration from code:
+```
+ddev exec drush cim
+```
+
+Export active configuration into code:
+```
+ddev exec drush cex
+```
+
+## Theme development
+
+On the host machine, execute:
+```
+vendor/consolidation/robo/robo watch:theme-debug
+```
+
+Then the modifications of the theme will be on-the-fly compiled. The `-debug` suffix ensures that the CSS code remains human-readable.
+
+The directory structure:
+ - `assets/` - put everything there that's not stylesheet and needs postprocessing (images, fonts, etc)
+ - `dist/` - `.gitignore`-ed path where the compiled / optimized files live, the theme should refer the assets from that directory.
+
+Generally for theme development, it's advisable to entirely turn off caching:
+https://www.drupal.org/node/2598914
+
+## Add new modules
+
+With `composer require ...` you can download new dependencies to your 
+installation.
+
+```
+composer require drupal/devel:~1.0
+```
+
+## How can I apply patches to downloaded modules?
+
+If you need to apply patches (depending on the project being modified, a pull 
+request is often a better solution), you can do so with the 
+[composer-patches](https://github.com/cweagans/composer-patches) plugin.
+
+To add a patch to drupal module foobar insert the patches section in the extra 
+section of composer.json:
+```json
+"extra": {
+    "patches": {
+        "drupal/foobar": {
+            "Patch description": "URL or local path to patch"
+        }
+    }
+}
+```
