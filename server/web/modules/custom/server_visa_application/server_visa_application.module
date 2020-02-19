@@ -111,7 +111,7 @@ function server_visa_application_form_alter(&$form, FormStateInterface $form_sta
 
   if ($is_application_locked || $is_confirmation_section_locked) {
     $form['#disabled'] = TRUE;
-    unset($form['actions']);
+    $form['actions']['#access'] = FALSE;
   }
 
   // Section status messages.
