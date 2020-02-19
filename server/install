@@ -129,9 +129,6 @@ fi
 # Frontend
 # "$ROOT"/vendor/consolidation/robo/robo compile:theme
 
-# settings.php customization.
-update_settings
-
 # Run post script (if any).
 (run_post_script "install") || true
 

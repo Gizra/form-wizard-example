@@ -190,29 +190,6 @@ function start_ddev {
 }
 
 ##
-# Update settings.php.
-#
-# Various settings.php customization.
-##
-function update_settings {
-  echo -e "${LBLUE}> Updating settings${RESTORE}"
-  SETTINGS="$ROOT/web/sites/default/settings.php"
-  chmod 777 "$SETTINGS"
-
-  {
-    echo ""
-    echo "/**"
-    echo " * Config Sync settings."
-    echo " */"
-    echo "\$config_directories[CONFIG_SYNC_DIRECTORY] = '../config/sync';"
-  } >> "$SETTINGS"
-
-  # Protect the settings from changes, to prevent drupal's warning.
-  chmod 755 "$SETTINGS"
-}
-
-
-##
 # Fill string with spaces until required length.
 #
 # @param string The string.
